@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Libre_Bodoni, Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const libre_bodoni = Libre_Bodoni({
+  subsets: ["latin"],
+  variable: "--font-libre-bodoni",
+});
+const poppins = Poppins({
+  weight: ["500"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${libre_bodoni.className} ${poppins.className}`}>
+        {children}
+      </body>
     </html>
   );
 }
+

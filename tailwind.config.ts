@@ -8,13 +8,41 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+
+        "light-text": "var(--light-text)",
+
+        "primary-1": "var(--primary-1)",
+        "primary-2": "var(--primary-2)",
+        "primary-3": "var(--primary-3)",
+        "primary-4": "var(--primary-4)",
+
+        "secondary-1": "var(--secondary-1)",
+        "secondary-2": "var(--secondary-2)",
+        "secondary-3": "var(--secondary-3)",
+        "secondary-4": "var(--secondary-4)",
+      },
+      fontFamily: {
+        "header-font": "var(--font-libre-bodoni)",
+        "body-font": "var(--font-poppins)",
+      },
+      fontSize: {
+        "header-text-1": "var(--font-size-header-1)",
+        "header-text-2": "var(--font-size-header-2)",
+        "body-text-1": "var(--font-size-text-1)",
+        "body-text-2": "var(--font-size-text-2)",
+      },
+      fontWeight: {
+        "header-font-weight-1": "var(--font-weight-header-1)",
+        "header-font-weight-2": "var(--font-weight-header-2)",
+        "body-font-weight-1": "var(--font-weight-text-1)",
+        "body-font-weight-2": "var(--font-weight-text-2)",
       },
     },
   },
   plugins: [],
 };
 export default config;
+
