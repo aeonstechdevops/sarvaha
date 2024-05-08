@@ -1,6 +1,7 @@
 import Button from "@/app/_components/ui/Button";
 import Link from "next/link";
 import React from "react";
+import { LuMouse } from "react-icons/lu";
 
 const config = {
   heroImage: "/images/pages/home/hero.png",
@@ -29,13 +30,17 @@ const Hero = () => {
       }}>
       <GradientOverlay />
       <div className="wrapper wrapper-pad relative z-10 flex items-end h-full">
-        <div className="flex flex-col gap-2 text-color-1 md:w-[40vw]">
+        <div className="flex flex-col gap-2 text-color-1 md:w-[35vw]">
           <h1>{config.heroTitle}</h1>
           <p>{config.heroDescription}</p>
           <Link href={config.heroButton.url} className="w-fit">
             <Button variant={"secondary"}>{config.heroButton.text}</Button>
           </Link>
         </div>
+        <LuMouse
+          color="#fff"
+          className="absolute bottom-10 size-10 left-[50%] translate-x-[-50%] hover:cursor-pointer hover:opacity-100 opacity-30 transition-opacity duration-500 ease-in-out"
+        />
       </div>
     </section>
   );
