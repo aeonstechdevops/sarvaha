@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Light Mode Vars */
+  :root {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(218, 15%, 11%);
+
+    --light-text: hsl(0, 0%, 43%);
+
+    --color-1: hsla(0, 0%, 100%, 1);
+    --color-2: hsla(218, 15%, 11%, 1);
+
+
+
+    --primary-1: hsl(358, 84%, 52%);
+    --primary-2: hsl(359, 73%, 47%);
+    --primary-3: hsl(1, 71%, 42%);
+    --primary-4: hsl(2, 69%, 37%);
+
+    --secondary-1: hsl(44, 100%, 59%);
+    --secondary-2: hsl(44, 100%, 53%);
+    --secondary-3: hsl(44, 72%, 53%);
+    --secondary-4: hsl(44, 95%, 44%);
+
+    /* font size and weight */
+    --font-size-header-1: 3rem;
+    --font-size-header-2: 2rem;
+    --font-weight-header-1: 700;
+    --font-weight-header-2: 700;
+
+    --font-size-text-1: 1rem;
+    --font-size-text-2: 0.7rem;
+    --font-weight-text-1: 500;
+    --font-weight-text-2: 500;
+
+    --header-height: 4rem;
+  }
+}
+
+@layer components {
+  *,
+  *::after,
+  *::before {
+    @apply m-0 p-0 box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply scroll-smooth
+  }
+
+  html,
+  body {
+    @apply bg-background text-color-2 text-body-text-1 font-body-font-weight-1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+  h1 {
+    @apply font-header-font font-header-font-weight-1 text-header-text-1;
+  }
+  h2 {
+    @apply font-header-font font-header-font-weight-2 text-header-text-2;
+  }
+  .wrapper {
+    @apply w-[90%] max-w-[140rem] mx-auto;
+  }
+  .wrapper-pad {
+    @apply py-8;
+  }
+  .hero-header-pad {
+    padding-top: var(--header-height);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+// <=====CUSTOM STYLINGS======>
+
+// Scroll Bar Styling
+.scrollbar {
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: lightgray;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-primary-1
+  }
+}

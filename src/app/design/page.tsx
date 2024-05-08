@@ -38,21 +38,19 @@ const Typography = () => (
   <div className="flex flex-col gap-4">
     <div className="flex gap-4 items-center text-nowrap">
       <h1>Heading 1</h1>
-      <h1 className="text-light-text">Heading 1 - Light</h1>
+      <h1>Heading 1 - Light</h1>
     </div>
     <div className="flex gap-4 items-center overflow-x-auto">
       <h2>Heading 2</h2>
-      <h2 className="text-light-text">Heading 2 - Light</h2>
+      <h2>Heading 2 - Light</h2>
     </div>
     <div className="flex gap-4 items-center overflow-x-auto">
       <p>Body text 1</p>
-      <p className="text-light-text">Body text 1</p>
+      <p>Body text 1</p>
     </div>
     <div className="flex gap-4 items-center overflow-x-auto">
       <p className="text-body-text-2 font-body-font-weight-2">Body text 2</p>
-      <p className="text-body-text-2 font-body-font-weight-2 text-light-text">
-        Body text 2
-      </p>
+      <p className="text-body-text-2 font-body-font-weight-2">Body text 2</p>
     </div>
   </div>
 );

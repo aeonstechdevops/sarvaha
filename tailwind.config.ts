@@ -14,6 +14,9 @@ const config: Config = {
 
         "light-text": "var(--light-text)",
 
+        "color-1": "var(--color-1)",
+        "color-2": "var(--color-2)",
+
         "primary-1": "var(--primary-1)",
         "primary-2": "var(--primary-2)",
         "primary-3": "var(--primary-3)",
@@ -25,8 +28,8 @@ const config: Config = {
         "secondary-4": "var(--secondary-4)",
       },
       fontFamily: {
-        "header-font": "var(--font-libre-bodoni)",
-        "body-font": "var(--font-poppins)",
+        "header-font": ["var(--font-libre-bodoni)"],
+        "body-font": ["var(--font-poppins)"],
       },
       fontSize: {
         "header-text-1": "var(--font-size-header-1)",

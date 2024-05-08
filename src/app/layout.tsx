@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import { Libre_Bodoni, Poppins } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
+import Header from "./_components/header";
+import Footer from "./_components/footer";
 
 const libre_bodoni = Libre_Bodoni({
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-libre-bodoni",
 });
 const poppins = Poppins({
   weight: ["500"],
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-poppins",
 });
 
@@ -24,8 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${libre_bodoni.className} ${poppins.className}`}>
+      <body className={`${libre_bodoni.variable} ${poppins.variable}`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
