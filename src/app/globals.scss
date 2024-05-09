@@ -28,6 +28,7 @@
     /* font size and weight */
     --font-size-header-1: 3rem;
     --font-size-header-2: 2rem;
+    --font-size-header-3: 1.3rem;
     --font-weight-header-1: 700;
     --font-weight-header-2: 700;
 
@@ -65,11 +66,14 @@
   h2 {
     @apply font-header-font font-header-font-weight-2 text-header-text-2;
   }
+  h3 {
+    @apply font-header-font text-header-text-3;
+  }
   .wrapper {
     @apply w-[90%] max-w-[140rem] mx-auto;
   }
   .wrapper-pad {
-    @apply py-8;
+    @apply py-12;
   }
   .hero-header-pad {
     padding-top: var(--header-height);

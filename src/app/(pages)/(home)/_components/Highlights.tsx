@@ -44,9 +44,10 @@ const ImageCarousel = () => {
       infiniteLoop
       interval={5000}
       className="w-full"
-      showThumbs={false}>
+      showThumbs={false}
+    >
       {config.images.map(({ url, alt }, idx) => (
-        <div key={idx} className=" md:h-[50rem] h-[30rem] w-full relative">
+        <div key={idx} className=" relative h-[30rem] w-full md:h-[50rem]">
           <Image
             src={url}
             alt={alt}
@@ -62,14 +63,14 @@ const ImageCarousel = () => {
 const Highlights = () => {
   return (
     <section className="wrapper wrapper-pad">
-      <div className="flex gap-4 items-stretch flex-col md:flex-row">
-        <div className="flex flex-[2] flex-col gap-2 justify-between">
+      <div className="flex flex-col items-stretch gap-4 md:flex-row">
+        <div className="flex flex-[2] flex-col justify-between gap-2">
           <h1>{config.title}</h1>
           <div className="flex flex-col gap-4">
             <h2>{config.subTitle}</h2>
             <p>{config.description}</p>
             <Link href={config.button.url} className="w-fit">
-              <Button variant={"secondary"}>{config.button.text}</Button>
+              <Button>{config.button.text}</Button>
             </Link>
           </div>
         </div>

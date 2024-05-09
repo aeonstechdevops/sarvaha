@@ -34,6 +34,7 @@ const config: Config = {
       fontSize: {
         "header-text-1": "var(--font-size-header-1)",
         "header-text-2": "var(--font-size-header-2)",
+        "header-text-3": "var(--font-size-header-3)",
         "body-text-1": "var(--font-size-text-1)",
         "body-text-2": "var(--font-size-text-2)",
       },
@@ -48,4 +49,3 @@ const config: Config = {
   plugins: [],
 };
 export default config;
-
