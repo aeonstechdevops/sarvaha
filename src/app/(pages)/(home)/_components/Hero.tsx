@@ -14,7 +14,7 @@ const config = {
     url: "/",
   },
 };
-
+  
 const Hero = () => {
   return (
     <section
