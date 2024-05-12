@@ -1,7 +1,12 @@
 import Button from "@/app/_components/ui/Button";
+import { cn } from "@/app/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, ReactNode, useState } from "react";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 import { Carousel as ReactResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
@@ -34,29 +39,62 @@ const config = {
   ],
 };
 
+const CustomButton = ({
+  label,
+  fn,
+}: {
+  label: "previous" | "next";
+  fn: () => void;
+}): React.JSX.Element => {
+  return (
+    <button
+      className={cn(
+        "absolute bottom-8 z-10 flex size-20 items-center justify-center rounded-full bg-primary-4 text-color-1 opacity-80 transition-all duration-500 ease-in-out hover:cursor-pointer hover:opacity-100",
+        label === "previous" && "left-8",
+        label == "next" && "right-8 md:left-32 md:right-0",
+      )}
+      onClick={fn}
+    >
+      {label === "previous" ? (
+        <MdOutlineKeyboardArrowLeft size={40} />
+      ) : (
+        <MdOutlineKeyboardArrowRight size={40} />
+      )}
+    </button>
+  );
+};
+
 const ImageCarousel = () => {
   return (
-    <ReactResponsiveCarousel
-      statusFormatter={() => ""}
-      swipeable
-      autoPlay
-      emulateTouch
-      infiniteLoop
-      interval={5000}
-      className="w-full"
-      showThumbs={false}
-    >
-      {config.images.map(({ url, alt }, idx) => (
-        <div key={idx} className=" relative h-[30rem] w-full md:h-[50rem]">
-          <Image
-            src={url}
-            alt={alt}
-            fill
-            className="object-cover object-center"
-          />
-        </div>
-      ))}
-    </ReactResponsiveCarousel>
+    <div className="relative w-full">
+      <ReactResponsiveCarousel
+        statusFormatter={() => ""}
+        swipeable
+        autoPlay
+        emulateTouch
+        infiniteLoop
+        interval={5000}
+        className="w-full"
+        showThumbs={false}
+        renderArrowPrev={(goPrev) => {
+          return <CustomButton label="previous" fn={goPrev} />;
+        }}
+        renderArrowNext={(goNext) => {
+          return <CustomButton label={"next"} fn={goNext} />;
+        }}
+      >
+        {config.images.map(({ url, alt }, idx) => (
+          <div key={idx} className=" relative h-[30rem] w-full md:h-[50rem]">
+            <Image
+              src={url}
+              alt={alt}
+              fill
+              className="object-cover object-center"
+            />
+          </div>
+        ))}
+      </ReactResponsiveCarousel>
+    </div>
   );
 };
 
