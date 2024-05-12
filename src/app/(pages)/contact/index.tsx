@@ -1,64 +1,114 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Button from "@/app/_components/ui/Button";
+import { FaPhoneAlt } from "react-icons/fa";
+import {
+  IoIosMail,
+  IoLogoFacebook,
+  IoLogoInstagram,
+  IoLogoLinkedin,
+  IoLogoYoutube,
+} from "react-icons/io";
+import { FaLocationDot, FaXTwitter } from "react-icons/fa6";
+import { cn } from "@/app/lib/utils";
 
 const config = {
   title: "Contact Us",
   description: "Any question or remarks? Just write us a message!",
-  title2: "Contact Information",
-  description2: "Say something to start a live chat!",
-  phone: "+1012 3456 789",
-  email: "demo@gmail.com",
-  address: "132 Dartmouth Street Boston, Massachusetts 02156 United States",
-  phoneUrl: "/images/pages/contact/phone.png",
-  emailUrl: "/images/pages/contact/email.png",
-  addressUrl: "/images/pages/contact/location.png",
-  letterSendUrl: "/images/pages/contact/letter_send.png",
-  twitterUrl: "/images/pages/contact/twitter.png",
-  instagramUrl: "/images/pages/contact/instagram.png",
-  discordUrl: "/images/pages/contact/discord.png",
+  card: {
+    title: "Contact Information",
+    description: "Say something to start a live chat!",
+    phone: "+1012 3456 789",
+    email: "demo@gmail.com",
+    address: "132 Dartmouth Street Boston, Massachusetts 02156 United States",
+    socials: [
+      {
+        title: "Facebook",
+        url: "https://www.facebook.com",
+        icon: <IoLogoFacebook />,
+      },
+      {
+        title: "Twitter",
+        url: "https://www.x.com",
+        icon: <FaXTwitter />,
+      },
+      {
+        title: "YouTube",
+        url: "https://www.youtube.com",
+        icon: <IoLogoYoutube />,
+      },
+      {
+        title: "LinkedIn",
+        url: "https://www.linkedin.com",
+        icon: <IoLogoLinkedin />,
+      },
+      {
+        title: "Instagram",
+        url: "https://www.instagram.com",
+        icon: <IoLogoInstagram />,
+      },
+    ],
+  },
   button: {
     text: "Send Message",
     url: "/",
   },
 };
 
+const InfoCard = () => {
+  const { card } = config;
+  return (
+    <div className="flex flex-col justify-between rounded-lg bg-primary-3 p-8 text-color-1">
+      <div className="flex flex-col gap-2">
+        <h2>{card.title}</h2>
+        <p>{card.description}</p>
+      </div>
+      <div className="flex flex-col gap-6">
+        <div className="flex items-center gap-2">
+          <FaPhoneAlt className="text-xl" />
+          <Link href={`tel:${card.phone}`}>{card.phone}</Link>
+        </div>
+        <div className="flex items-center gap-2">
+          <IoIosMail className="text-xl" />
+          <Link href={`mailto:${card.email}`}>{card.email}</Link>
+        </div>
+        <div className="flex items-center gap-2">
+          <FaLocationDot className="text-xl" />
+          <p>{card.address}</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-2">
+        {card.socials.map((social, idx) => (
+          <Link
+            href={social.url}
+            target="_blank"
+            className={cn(
+              "rounded-full p-2 text-xl",
+              idx % 2
+                ? "bg-secondary-2 text-color-1"
+                : "bg-color-1 text-primary-2",
+            )}
+            key={idx}
+          >
+            {social.icon}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Contact = () => {
   return (
-    <div className=" wrapper wrapper-pad my-20 flex flex-col justify-center text-sm">
-      <div className="">
-        <h1 className="pb-4 text-center text-3xl md:text-4xl">
-          {config.title}
-        </h1>
+    <div className=" wrapper wrapper-pad flex flex-col justify-center gap-8 text-sm">
+      <div className="flex flex-col items-center gap-6">
+        <h1>{config.title}</h1>
         <p className="text-center text-light-text">{config.description}</p>
       </div>
 
-      <div className="xl:mx-25 my-10 flex flex-col rounded-lg p-2 shadow-lg md:mx-20 lg:flex-row">
-        <div className=" flex flex-col rounded-lg bg-primary-3 p-10 px-8 py-7  text-white md:px-12 lg:w-2/5 lg:px-9">
-          <h3 className="pb-4 text-3xl md:text-4xl">{config.title2}</h3>
-          <p className="pb-16">{config.description2}</p>
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-row gap-4">
-              <img className="h-6 w-6" src={config.phoneUrl} alt="1" />
-              <p>{config.phone}</p>
-            </div>
-            <div className="flex flex-row gap-4">
-              <img className="h-6 w-6" src={config.emailUrl} alt="2" />
-              <p>{config.email}</p>
-            </div>
-            <div className="flex flex-row gap-4">
-              <img className="h-6 w-6" src={config.addressUrl} alt="3" />
-              <p>{config.address}</p>
-            </div>
-          </div>
-          <div className="mt-20 flex flex-row gap-4">
-            <img className="h-7 w-7" src={config.twitterUrl} alt="1" />
-            <img className="h-7 w-7" src={config.instagramUrl} alt="2" />
-            <img className="h-7 w-7" src={config.discordUrl} alt="3" />
-          </div>
-        </div>
-        <div className=" xl:px-30 flex flex-col px-4 py-10 md:p-10 md:px-16 lg:w-3/5 lg:py-10">
+      <div className="flex flex-col items-stretch gap-6 rounded-lg p-4 shadow-md md:flex-row">
+        <InfoCard />
+        <div className=" flex flex-col">
           <form className="">
             <div className="mb-4 grid grid-cols-1 gap-4 pb-4 md:grid-cols-2">
               <div className="flex flex-col">
@@ -107,28 +157,28 @@ const Contact = () => {
               <div className="flex flex-wrap gap-5">
                 <label
                   htmlFor="subject1"
-                  className="cursor-pointer flex items-center gap-1 md:gap-2 lg:gap-1"
+                  className="flex cursor-pointer items-center gap-1 md:gap-2 lg:gap-1"
                 >
                   <input type="radio" id="subject1" name="SelectSubject" />
                   General Enquiry
                 </label>
                 <label
                   htmlFor="subject2"
-                  className="cursor-pointer flex items-center gap-1 md:gap-2 lg:gap-1"
+                  className="flex cursor-pointer items-center gap-1 md:gap-2 lg:gap-1"
                 >
                   <input type="radio" id="subject2" name="SelectSubject" />
                   General Enquiry
                 </label>
                 <label
                   htmlFor="subject3"
-                  className="cursor-pointer flex items-center gap-1 md:gap-2 lg:gap-1"
+                  className="flex cursor-pointer items-center gap-1 md:gap-2 lg:gap-1"
                 >
                   <input type="radio" id="subject3" name="SelectSubject" />
                   General Enquiry
                 </label>
                 <label
                   htmlFor="subject4"
-                  className="cursor-pointer flex items-center gap-1 md:gap-2 lg:gap-1"
+                  className="flex cursor-pointer items-center gap-1 md:gap-2 lg:gap-1"
                 >
                   <input type="radio" id="subject4" name="SelectSubject" />
                   General Enquiry
