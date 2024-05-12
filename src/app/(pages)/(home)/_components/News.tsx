@@ -19,7 +19,7 @@ const config = {
       title: "Funding Frenzy at Demo Day",
     },
     {
-      image: { url: "/images/pages/home/news3.png", alt: "News1 image" },
+      image: { url: "/images/pages/home/news2.png", alt: "News1 image" },
       title: "Incubators: Powering Local Economies",
     },
     {

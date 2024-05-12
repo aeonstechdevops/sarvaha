@@ -9,16 +9,19 @@ import { usePathname } from "next/navigation";
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 
-type MenuDrawerProps = React.HTMLProps<HTMLDivElement> & { open: boolean };
+type MenuDrawerProps = React.HTMLProps<HTMLDivElement> & {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 const MenuDrawer = React.forwardRef<HTMLDivElement, MenuDrawerProps>(
-  (props, ref) => {
+  ({ open, setOpen }, ref) => {
     const pathname = usePathname();
     return (
       <div
         ref={ref}
         className={cn(
-          props.open ? "" : "translate-x-[100vw] md:translate-x-[100vw]",
+          open ? "" : "translate-x-[100vw] md:translate-x-[100vw]",
           "fixed right-0 z-10 h-[100vh] w-[100vw] bg-primary-4 transition-all duration-500 ease-in-out md:w-[60vw]",
           "flex flex-col items-center justify-center gap-6",
         )}
@@ -27,6 +30,9 @@ const MenuDrawer = React.forwardRef<HTMLDivElement, MenuDrawerProps>(
           <Link
             key={idx}
             href={url}
+            onClick={() => {
+              setOpen(false);
+            }}
             className={cn(
               "p-2 text-5xl font-header-font-weight-2 text-color-1",
               pathname === url && "text-secondary-1",
@@ -71,7 +77,11 @@ const Header = () => {
         scrollPosition > windowDimensions.height / 2 && "bg-color-1 shadow-xl",
       )}
     >
-      <MenuDrawer open={menuDrawerOpen} ref={menuRef} />
+      <MenuDrawer
+        open={menuDrawerOpen}
+        ref={menuRef}
+        setOpen={setMenuDrawerOpen}
+      />
       <div
         className={cn(
           "wrapper flex h-full items-center justify-between gap-2 py-2",

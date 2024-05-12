@@ -12,11 +12,7 @@ export const HeaderLinks: THeaderLink[] = [
     url: "/about",
   },
   {
-    title: "NAV 3",
-    url: "/",
-  },
-  {
-    title: "NAV 4",
-    url: "/",
+    title: "Contact",
+    url: "/contact",
   },
 ];
