@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { isMobile } from "react-device-detect";
 
 interface WindowDimensions {
   width: number;
@@ -14,7 +15,7 @@ const getWindowDimensions = (): WindowDimensions => {
     };
   } else {
     // Return default dimensions if window is not available (e.g., server-side rendering)
-    return { width: 0, height: 0 };
+    return { width: isMobile ? 360 : 1920, height: isMobile ? 800 : 1080 };
   }
 };
 
