@@ -23,16 +23,15 @@ export const useWindowDimensions = (): WindowDimensions => {
     getWindowDimensions(),
   );
 
+  const handleResize = () => {
+    setWindowDimensions(getWindowDimensions());
+  };
   useEffect(() => {
-    const handleResize = () => {
-      setWindowDimensions(getWindowDimensions());
-    };
-
     if (typeof window !== "undefined") {
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
-  }, []);
+  }, [window]);
 
   return windowDimensions;
 };

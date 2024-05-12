@@ -14,7 +14,7 @@ const config = {
     url: "/",
   },
 };
-  
+
 const Hero = () => {
   return (
     <section
@@ -26,7 +26,7 @@ const Hero = () => {
         backgroundSize: "cover",
       }}
     >
-      <GradientOverlay className="bg-gradient-to-t from-black via-black/50 to-black/0" />
+      <GradientOverlay className="h-[calc(100%-4rem)] bg-gradient-to-t from-black via-black/50 to-black/0" />
       <div className="wrapper wrapper-pad relative flex h-full items-end">
         <div className="flex flex-col gap-2 text-color-1 md:w-[35vw]">
           <h1>{config.heroTitle}</h1>

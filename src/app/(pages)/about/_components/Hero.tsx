@@ -17,7 +17,7 @@ const Hero = () => {
         backgroundSize: "cover",
       }}
     >
-      <GradientOverlay className="bg-gradient-to-t from-black via-black/50 to-black/0" />
+      <GradientOverlay className="h-[calc(100%-4rem)] bg-gradient-to-t from-black via-black/50 to-black/0" />
       <div className="wrapper wrapper-pad relative flex h-full items-center justify-center text-color-1">
         <h1>{config.title}</h1>
       </div>
