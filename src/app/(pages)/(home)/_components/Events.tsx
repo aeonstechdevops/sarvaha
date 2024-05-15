@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { useMemo } from "react";
 import Button from "@/app/_components/ui/Button";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,6 +6,7 @@ import { Carousel as ReactResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { GradientOverlay } from "@/app/_components/ui/GeadientOverlay";
 import { useWindowDimensions } from "@/app/hooks/useWindowDimensions";
+import NoSSR from "@/app/_components/NoSSR";
 
 const config = {
   title: "Upcoming Events",
@@ -42,6 +43,10 @@ const config = {
 const EventsCarousel = () => {
   const windowDimensions = useWindowDimensions();
 
+  const centerSlidePercentage = useMemo(() => {
+    return (1440 / windowDimensions.width) * 30;
+  }, [windowDimensions.width]);
+
   return (
     <ReactResponsiveCarousel
       statusFormatter={() => ""}
@@ -52,7 +57,7 @@ const EventsCarousel = () => {
       interval={5000}
       showThumbs={false}
       centerMode={true}
-      centerSlidePercentage={(1440 / windowDimensions.width) * 30}
+      centerSlidePercentage={centerSlidePercentage}
     >
       {[...config.events, ...config.events].map(({ url, alt, text }, idx) => (
         <div
@@ -90,7 +95,9 @@ const Events = () => {
             </Link>
           </div>
         </div>
-        <EventsCarousel />
+        <NoSSR>
+          <EventsCarousel />
+        </NoSSR>
       </div>
     </section>
   );

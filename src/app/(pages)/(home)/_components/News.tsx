@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Image from "next/image";
 import { useWindowDimensions } from "@/app/hooks/useWindowDimensions";
 import { Carousel as ReactResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { BsArrowRight } from "react-icons/bs";
+import NoSSR from "@/app/_components/NoSSR";
 
 const config = {
   title: "News",
@@ -32,6 +33,10 @@ const config = {
 const NewsCarousel = () => {
   const windowDimensions = useWindowDimensions();
 
+  const centerSlidePercentage = useMemo(() => {
+    return (1440 / windowDimensions.width) * 35;
+  }, [windowDimensions.width]);
+
   return (
     <ReactResponsiveCarousel
       statusFormatter={() => ""}
@@ -43,7 +48,7 @@ const NewsCarousel = () => {
       showThumbs={false}
       centerMode={windowDimensions.width > 425}
       showIndicators={false}
-      centerSlidePercentage={(1440 / windowDimensions.width) * 35}
+      centerSlidePercentage={centerSlidePercentage}
     >
       {[...config.news, ...config.news].map(({ image, title }, idx) => (
         <div
@@ -77,7 +82,9 @@ const News = () => {
             <p>{config.description}</p>
           </div>
         </div>
-        <NewsCarousel />
+        <NoSSR>
+          <NewsCarousel />
+        </NoSSR>
       </div>
     </section>
   );
