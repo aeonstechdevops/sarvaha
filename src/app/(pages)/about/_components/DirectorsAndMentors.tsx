@@ -1,3 +1,4 @@
+import Button from "@/app/_components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -72,6 +73,10 @@ const config = {
       },
     },
   ],
+  button: {
+    text: "Explore more",
+    url: "/about/directors-and-mentors",
+  },
 };
 
 const Card = ({
@@ -123,6 +128,9 @@ const DirectorsAndMentors = () => {
             <Card member={member} key={idx} />
           ))}
         </div>
+        <Link href={config.button.url}>
+          <Button>{config.button.text}</Button>
+        </Link>
       </div>
     </section>
   );

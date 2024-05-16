@@ -3,7 +3,7 @@ import React from "react";
 
 const config = {
   heroImage: "/images/pages/about/hero.png",
-  title: "About Sarvaha",
+  title: "Meet Our Directors & Mentors",
 };
 
 const Hero = () => {
