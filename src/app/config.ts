@@ -12,6 +12,14 @@ export const HeaderLinks: THeaderLink[] = [
     url: "/about",
   },
   {
+    title: "Incubation",
+    url: "/incubation",
+  },
+  {
+    title: "Events",
+    url: "/events",
+  },
+  {
     title: "Contact",
     url: "/contact",
   },

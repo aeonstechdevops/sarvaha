@@ -2,7 +2,7 @@ import Button from "@/app/_components/ui/Button";
 import { cn } from "@/app/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React, { CSSProperties, ReactNode, useState } from "react";
+import React from "react";
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
