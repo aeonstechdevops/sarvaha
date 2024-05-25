@@ -5,9 +5,9 @@ import Image from "next/image";
 import { Carousel as ReactResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { GradientOverlay } from "@/app/_components/ui/GeadientOverlay";
-import { useWindowDimensions } from "@/app/hooks/useWindowDimensions";
 import NoSSR from "@/app/_components/NoSSR";
-
+import { useWindowDimensions } from "@/app/hooks/useWindowDimensions";
+import { motion } from "framer-motion";
 const config = {
   title: "Upcoming Events",
   description:
@@ -68,7 +68,7 @@ const EventsCarousel = () => {
             src={url}
             alt={alt}
             fill
-            className="object-cover object-center"
+            className="object-cover object-center transition-all duration-1000 ease-in-out group-hover:scale-110"
           />
           <p className="absolute bottom-10 left-4 z-10 text-left text-color-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
             {text}
@@ -95,9 +95,24 @@ const Events = () => {
             </Link>
           </div>
         </div>
-        <NoSSR>
-          <EventsCarousel />
-        </NoSSR>
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: "-100%",
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 0.5, // Animation duration
+              easings: true,
+            },
+          }}
+        >
+          <NoSSR>
+            <EventsCarousel />
+          </NoSSR>
+        </motion.div>
       </div>
     </section>
   );

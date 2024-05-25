@@ -69,7 +69,7 @@ const ImageGrid = () => {
       {config.facilities.map(({ src, alt }, idx) => (
         <div
           key={idx}
-          className="group relative col-span-3 min-h-[10rem] cursor-pointer md:col-span-1"
+          className="group relative col-span-3 min-h-[10rem] cursor-pointer overflow-hidden md:col-span-1"
           onClick={() => {
             setSelectedImage(idx);
             scrollToDisplayImage();
@@ -79,7 +79,7 @@ const ImageGrid = () => {
             src={src}
             alt={alt}
             fill
-            className="object-cover object-center"
+            className="object-cover object-center transition-all duration-1000 ease-in-out group-hover:scale-110"
           />
           <p
             className={cn(

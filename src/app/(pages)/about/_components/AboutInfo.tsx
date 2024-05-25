@@ -1,7 +1,7 @@
 import Button from "@/app/_components/ui/Button";
 import { cn } from "@/app/lib/utils";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import React from "react";
 
 const config = {
   sections: [
@@ -16,19 +16,15 @@ const config = {
             seed funding.`,
       button: {
         text: "Read More",
-        url: "/",
+        url: "/about/sarvah",
       },
     },
     {
-      title: { part1: "Our", part2: "Story" },
-      description: `Established in 1981, Shri Guru Gobind Singhji Institute of Engineering and Technology
-        (SGGSIET), Nanded, is one of the promising leader institutions in technical education,
-        research and technology transfer. Its been identified as an Institute which can be
-        raised to the level of Centre of Excellence. The institute has excellent track record of
-        publications with recent statistics as 1200+ peer reviewed publications`,
+      title: { part1: "How we can", part2: "Help You?" },
+      description: `The primary focus of SARVAH is to help startups born out of innovative ideas to grow and succeed by providing various resources and support systems.`,
       button: {
         text: "Read More",
-        url: "/",
+        url: "/about/our-help",
       },
     },
   ],
@@ -37,7 +33,17 @@ const config = {
 const Section = ({ idx }: { idx: number }) => {
   const isOdd = idx % 2;
   return (
-    <div
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+        transition: {
+          duration: 1.5, // Animation duration
+          ease: "easeInOut",
+        },
+      }}
       className={cn(
         `flex flex-col items-center gap-4 md:flex-row`,
         !isOdd && "md:flex-row-reverse",
@@ -60,11 +66,11 @@ const Section = ({ idx }: { idx: number }) => {
       </div>
       <div className="flex flex-1 flex-col gap-4">
         <p>{config.sections[idx].description}</p>
-        <Link href={config.sections[idx].button.url}>
+        <Link href={config.sections[idx].button.url} className="w-fit">
           <Button>{config.sections[idx].button.text}</Button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

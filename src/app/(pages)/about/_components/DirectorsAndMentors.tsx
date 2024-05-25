@@ -3,36 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IoLogoLinkedin } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const config = {
   title: "Meet Our Directors & Mentors",
   list: [
-    {
-      image: {
-        url: "/images/pages/about/members/rs.png",
-        alt: "Image of Shri Ravindra Shanbhag.",
-      },
-      name: "Shri Ravindra Shanbhag",
-      post: "Board of Director",
-      description:
-        "There are many variations of passages of Lorem Ipsum available",
-      linkedin: {
-        url: "/",
-      },
-    },
-    {
-      image: {
-        url: "/images/pages/about/members/yj.png",
-        alt: "Image of Prof. Yashwant Y. Joshi.",
-      },
-      name: "Prof. Yashwant Y. Joshi",
-      post: "Mentor/Advisor",
-      description:
-        "There are many variations of passages of Lorem Ipsum available",
-      linkedin: {
-        url: "/",
-      },
-    },
     {
       image: {
         url: "/images/pages/about/members/ad.png",
@@ -72,6 +47,45 @@ const config = {
         url: "/",
       },
     },
+    {
+      image: {
+        url: "/images/pages/about/members/yj.png",
+        alt: "Image of Prof. Yashwant Y. Joshi.",
+      },
+      name: "Prof. Yashwant Y. Joshi",
+      post: "Mentor/Advisor",
+      description:
+        "There are many variations of passages of Lorem Ipsum available",
+      linkedin: {
+        url: "/",
+      },
+    },
+    {
+      image: {
+        url: "/images/pages/about/members/rs.png",
+        alt: "Image of Shri Ravindra Shanbhag.",
+      },
+      name: "Shri Ravindra Shanbhag",
+      post: "Board of Director",
+      description:
+        "There are many variations of passages of Lorem Ipsum available",
+      linkedin: {
+        url: "/",
+      },
+    },
+    {
+      image: {
+        url: "/images/pages/about/members/rs.png",
+        alt: "Image of Dr. Jaishri  Waghmare.",
+      },
+      name: "Dr. Jaishri  Waghmare",
+      post: "Board of Director",
+      description:
+        "There are many variations of passages of Lorem Ipsum available",
+      linkedin: {
+        url: "/",
+      },
+    },
   ],
   button: {
     text: "Explore more",
@@ -95,7 +109,14 @@ const Card = ({
     };
   };
 }) => (
-  <div className="border-light-text/25 flex w-min flex-col border">
+  <motion.div
+    whileHover={{
+      scale: 1.05,
+      transition: { ease: "easeInOut" },
+    }}
+    whileTap={{ scale: 0.98 }}
+    className="border-light-text/25 flex w-min flex-col border"
+  >
     <div className="relative aspect-[31/23] h-[15rem]">
       <Image
         src={member.image.url}
@@ -116,7 +137,7 @@ const Card = ({
         <IoLogoLinkedin />
       </Link>
     </div>
-  </div>
+  </motion.div>
 );
 const DirectorsAndMentors = () => {
   return (

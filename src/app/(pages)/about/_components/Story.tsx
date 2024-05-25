@@ -5,8 +5,7 @@ import React from "react";
 
 const config = {
   title: "Our Story",
-  description:
-    "Established in 1981, Shri Guru Gobind Singhji Institute of Engineering and Technology (SGGSIET), Nanded, is one of the promising leader institutions in technical education, research and technology transfer. Its been identified as an Institute which can be raised to the level of Centre of Excellence. The institute has excellent track record of publications with recent statistics as 1200+ peer reviewed publications, 8000+ research citations, 25 patents filed and two awarded. Egged on by its Alumni, the Institute built a desire to take a giant leap into the next higher orbit of grooming and churning out entrepreneurs from its campus.",
+  description: `A section-8 not-for-profit company "SARVAH Incubation Foundation" promoted by alumni has been established at SGGSIE&T, Nanded. The non-profit company was inaugurated on 8-Aug-23 at the auspicious hands of Shri. Sunil Raithatha, Chairman, Board of Governors, SGGSIE&T, Nanded. Entrepreneur, alumnus, and Director of SARVAH Mr. Vikas Rathod (Director, Zeal Mfg, Pune - pioneers in the manufacturing of electro-technical calibration standards in India) was present on the occasion and the other Director of SARVAH Mr. Abhay Deshpande (founder of Recycle, a serial entrepreneur and alumnus) joined online.`,
   button: {
     text: "Read More",
     url: "/",
@@ -14,7 +13,7 @@ const config = {
   backgroundImage: "/images/pages/about/story.png",
 };
 
-const CollegeStory = () => {
+const Story = () => {
   return (
     <section
       className="relative"
@@ -29,7 +28,7 @@ const CollegeStory = () => {
       <div className="wrapper wrapper-pad relative flex flex-col gap-4 text-color-1">
         <h2>{config.title}</h2>
         <p>{config.description}</p>
-        <Link href={config.button.url}>
+        <Link href={config.button.url} className="w-fit">
           <Button>{config.button.text}</Button>
         </Link>
       </div>
@@ -37,4 +36,4 @@ const CollegeStory = () => {
   );
 };
 
-export default CollegeStory;
+export default Story;

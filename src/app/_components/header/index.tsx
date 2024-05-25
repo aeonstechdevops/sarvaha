@@ -8,26 +8,36 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 type MenuDrawerProps = React.HTMLProps<HTMLDivElement> & {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-
+const variants = {
+  open: { x: 0 },
+  closed: { x: "100%" },
+};
 const MenuDrawer = React.forwardRef<HTMLDivElement, MenuDrawerProps>(
   ({ open, setOpen }, ref) => {
     const pathname = usePathname();
     return (
-      <div
+      <motion.nav
         ref={ref}
+        animate={open ? "open" : "closed"}
+        variants={variants}
         className={cn(
-          open ? "" : "translate-x-[100vw] md:translate-x-[100vw]",
+          // open ? "" : "translate-x-[100vw] md:translate-x-[100vw]",
           "fixed right-0 z-10 h-[100vh] w-[100vw] bg-primary-4 transition-all duration-500 ease-in-out md:w-[60vw]",
           "flex flex-col items-center justify-center gap-6",
         )}
       >
         {HeaderLinks.map(({ title, url }, idx) => (
-          <Link
+          <motion.a
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{ scale: 0.9 }}
             key={idx}
             href={url}
             onClick={() => {
@@ -39,9 +49,9 @@ const MenuDrawer = React.forwardRef<HTMLDivElement, MenuDrawerProps>(
             )}
           >
             {title}
-          </Link>
+          </motion.a>
         ))}
-      </div>
+      </motion.nav>
     );
   },
 );
@@ -90,12 +100,16 @@ const Header = () => {
         <Link href={"/"} className={"z-20"}>
           <b>SARVAHA</b>
         </Link>
-        <div
+        <motion.div
+          whileHover={{
+            scale: 1.2,
+          }}
+          whileTap={{ scale: 0.9 }}
           className="z-20 flex size-10 items-center justify-center rounded-full bg-primary-1 text-color-1 hover:cursor-pointer"
           onClick={() => setMenuDrawerOpen((prev) => !prev)}
         >
           {menuDrawerOpen ? <IoClose /> : <IoMenu />}
-        </div>
+        </motion.div>
       </div>
     </header>
   );

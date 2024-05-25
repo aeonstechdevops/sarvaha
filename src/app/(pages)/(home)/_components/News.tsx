@@ -1,10 +1,11 @@
 import React, { useMemo } from "react";
 import Image from "next/image";
-import { useWindowDimensions } from "@/app/hooks/useWindowDimensions";
 import { Carousel as ReactResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { BsArrowRight } from "react-icons/bs";
 import NoSSR from "@/app/_components/NoSSR";
+import { useWindowDimensions } from "@/app/hooks/useWindowDimensions";
+import { motion } from "framer-motion";
 
 const config = {
   title: "News",
@@ -74,7 +75,7 @@ const NewsCarousel = () => {
 
 const News = () => {
   return (
-    <section className="bg-primary-4">
+    <section className="overflow-hidden bg-primary-4">
       <div className="wrapper wrapper-pad flex flex-col gap-6">
         <div className="flex flex-col justify-between md:flex-row md:items-center">
           <div className="text-color-1">
@@ -82,9 +83,24 @@ const News = () => {
             <p>{config.description}</p>
           </div>
         </div>
-        <NoSSR>
-          <NewsCarousel />
-        </NoSSR>
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: "100%",
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 0.5, // Animation duration
+              easings: true,
+            },
+          }}
+        >
+          <NoSSR>
+            <NewsCarousel />
+          </NoSSR>
+        </motion.div>
       </div>
     </section>
   );

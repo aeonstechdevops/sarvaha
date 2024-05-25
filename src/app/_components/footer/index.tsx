@@ -1,14 +1,16 @@
-import Link from "next/link";
+"use client";
+
+import { cn } from "@/app/lib/utils";
+import { motion } from "framer-motion";
 import React from "react";
-import Button from "../ui/Button";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   IoLogoFacebook,
   IoLogoInstagram,
   IoLogoLinkedin,
   IoLogoYoutube,
 } from "react-icons/io";
-import { FaXTwitter } from "react-icons/fa6";
-import { cn } from "@/app/lib/utils";
+import Button from "../ui/Button";
 
 const config = {
   social: {
@@ -146,9 +148,17 @@ const LinkGroup = ({
       <b>{group.title}</b>
       <div className="flex flex-col items-center gap-1 md:items-start">
         {group.links.map((link, idx) => (
-          <Link href={link.url} key={idx} className="w-fit">
+          <motion.a
+            href={link.url}
+            key={idx}
+            className="w-fit"
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{ scale: 0.9 }}
+          >
             {link.title}
-          </Link>
+          </motion.a>
         ))}
       </div>
     </div>
@@ -180,14 +190,18 @@ const SocialsGroup = ({
         </Button>
         <div className="flex flex-wrap items-center gap-2">
           {section.socials.map((social, idx) => (
-            <Link
+            <motion.a
+              whileHover={{
+                scale: 1.1,
+              }}
+              whileTap={{ scale: 0.9 }}
               href={social.url}
               target="_blank"
               className="text-xl text-secondary-1"
               key={idx}
             >
               {social.icon}
-            </Link>
+            </motion.a>
           ))}
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { TextGenerateEffect } from "@/app/_components/ui/text-generate-effect";
 import { cn } from "@/app/lib/utils";
 import Image from "next/image";
 import React from "react";
@@ -5,22 +6,12 @@ import React from "react";
 const config = {
   vision: {
     title: "Vision Statement",
-    description: `To become a fertile breeding ground where ideas germinate and
-        bloom into innovative products and services, in a carefully designed nurturing
-        environment that assists in every step of each phase of the blooming process, fully
-        and staunchly supported by an Enabling Ecosystem for Engineers and in general, any
-        aspiring brilliant mind with a drive, to become successful Entrepreneurs committed to
-        creating employment opportunities and wealth generation for all involved.”`,
+    description: ` “To become a fertile breeding ground where ideas germinate and bloom into innovative products and services, in a carefully designed nurturing environment that assists in every step of each phase of the blooming process, fully and staunchly supported by an Enabling Ecosystem for Engineers and in general, any aspiring brilliant mind with a drive, to become successful Entrepreneurs committed to creating employment opportunities and wealth generation for all involved.”`,
     icon: "/images/pages/about/rocket.svg",
   },
   mission: {
     title: "Our Mission",
-    description: `To become a fertile breeding ground where ideas germinate and
-    bloom into innovative products and services, in a carefully designed nurturing
-    environment that assists in every step of each phase of the blooming process, fully
-    and staunchly supported by an Enabling Ecosystem for Engineers and in general, any
-    aspiring brilliant mind with a drive, to become successful Entrepreneurs committed to
-    creating employment opportunities and wealth generation for all involved.”`,
+    description: `“We dedicate ourselves to, creating an inclusive environment that kindles a culture of entrepreneurship, a setup replete with resources from knowledge banks, to laboratories with access to high end equipment, mentors and industry connects, and bridging technocrats with alien world of finance and business management; all of it, and do everything that provides a positive space for ideas to take root and thereby create successful Entrepreneurs.”`,
     icon: "/images/pages/about/bulb.svg",
   },
   image: {
@@ -53,7 +44,8 @@ const Section = ({
       </div>
       <div className="flex flex-col gap-2">
         <h2>{section.title}</h2>
-        <p>{section.description}</p>
+        <TextGenerateEffect words={section.description} className="text-base" />
+        {/* <p>{section.description}</p> */}
       </div>
     </div>
   );

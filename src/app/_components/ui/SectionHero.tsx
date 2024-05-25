@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { GradientOverlay } from "./GeadientOverlay";
+import { motion } from "framer-motion";
 
 const SectionHero = ({
   config,
@@ -10,7 +13,19 @@ const SectionHero = ({
   };
 }) => {
   return (
-    <section
+    <motion.section
+      initial={{
+        opacity: 0,
+        y: "-100%",
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 1, // Animation duration
+        },
+      }}
+      viewport={{ once: true }}
       className={`hero-header-pad relative h-[40vh] bg-red-500`}
       style={{
         background: `url("${config.heroImage}")`,
@@ -23,7 +38,7 @@ const SectionHero = ({
       <div className="wrapper wrapper-pad relative flex h-full items-center justify-center text-color-1">
         <h1>{config.title}</h1>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

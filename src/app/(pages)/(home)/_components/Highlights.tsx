@@ -9,31 +9,24 @@ import {
 } from "react-icons/md";
 import { Carousel as ReactResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { motion } from "framer-motion";
 
 const config = {
-  title: "Highlights",
+  title: "Do you have an idea where we can support?",
   subTitle: "Launch Your Dreams Here",
   description:
-    "Our incubator provides the resources, mentorship, and collaborative environment you need to transform your innovative idea into a thriving business. We fuel the success of passionate entrepreneurs with industry expertise, networking opportunities, and the support system to propel you forward.",
+    "If you have an innovative idea that you believe will have a beneficial impact, we are here to help you every step of the way. Our incubation program creates a supportive atmosphere for aspiring entrepreneurs to turn their ideas into successful businesses. Whether you're working on a revolutionary technology, a sustainable solution, or a disruptive business strategy, we provide the resources, mentorship, and network you need to make your concept a reality. Join us at the SARVAH Incubation Centre to create the future together!",
   button: {
-    text: "Explore",
+    text: "Apply Now",
     url: "/",
   },
   images: [
     {
-      url: "/images/pages/home/highlight.png",
+      url: "/images/pages/home/hl1.png",
       alt: "Alt text",
     },
     {
-      url: "/images/pages/home/highlight.png",
-      alt: "Alt text",
-    },
-    {
-      url: "/images/pages/home/highlight.png",
-      alt: "Alt text",
-    },
-    {
-      url: "/images/pages/home/highlight.png",
+      url: "/images/pages/home/hl2.JPG",
       alt: "Alt text",
     },
   ],
@@ -100,9 +93,23 @@ const ImageCarousel = () => {
 
 const Highlights = () => {
   return (
-    <section className="wrapper wrapper-pad">
+    <motion.section className="wrapper wrapper-pad overflow-hidden">
       <div className="flex flex-col items-stretch gap-4 md:flex-row">
-        <div className="flex flex-[2] flex-col justify-between gap-2">
+        <motion.div
+          className="flex flex-[2] flex-col justify-between gap-2"
+          initial={{
+            opacity: 0,
+            x: "-100%",
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 0.5, // Animation duration
+              easings: true,
+            },
+          }}
+        >
           <h1>{config.title}</h1>
           <div className="flex flex-col gap-4">
             <h2>{config.subTitle}</h2>
@@ -111,12 +118,26 @@ const Highlights = () => {
               <Button>{config.button.text}</Button>
             </Link>
           </div>
-        </div>
-        <div className="flex flex-[4]">
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: "100%",
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 0.5, // Animation duration
+              easings: true,
+            },
+          }}
+          className="flex flex-[4]"
+        >
           <ImageCarousel />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
