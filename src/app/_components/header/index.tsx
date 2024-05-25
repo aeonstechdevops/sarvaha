@@ -1,34 +1,59 @@
 "use client";
 
 import { HeaderLinks } from "@/app/config";
+import { useScrollPosition } from "@/app/hooks/useScrollPosition";
+import { useWindowDimensions } from "@/app/hooks/useWindowDimensions";
 import { cn } from "@/app/lib/utils";
 import Link from "next/link";
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
+import { motion } from "framer-motion";
 
-type MenuDrawerProps = React.HTMLProps<HTMLDivElement> & { open: boolean };
-
+type MenuDrawerProps = React.HTMLProps<HTMLDivElement> & {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const variants = {
+  open: { x: 0 },
+  closed: { x: "100%" },
+};
 const MenuDrawer = React.forwardRef<HTMLDivElement, MenuDrawerProps>(
-  (props, ref) => {
+  ({ open, setOpen }, ref) => {
+    const pathname = usePathname();
     return (
-      <div
+      <motion.nav
         ref={ref}
+        animate={open ? "open" : "closed"}
+        variants={variants}
         className={cn(
-          props.open ? "" : "md:translate-x-[100vw] translate-x-[100vw]",
-          "fixed h-[100vh] md:w-[60vw] w-[100vw] bg-primary-4 right-0 transition-all duration-500 ease-in-out z-10",
-          "flex flex-col gap-6 items-center justify-center"
-        )}>
-        {HeaderLinks.map((link, idx) => (
-          <Link
+          // open ? "" : "translate-x-[100vw] md:translate-x-[100vw]",
+          "fixed right-0 z-10 h-[100vh] w-[100vw] bg-primary-4 transition-all duration-500 ease-in-out md:w-[60vw]",
+          "flex flex-col items-center justify-center gap-6",
+        )}
+      >
+        {HeaderLinks.map(({ title, url }, idx) => (
+          <motion.a
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{ scale: 0.9 }}
             key={idx}
-            href={link.url}
-            className="p-2 font-header-font-weight-2 text-color-1 text-5xl">
-            {link.title}
-          </Link>
+            href={url}
+            onClick={() => {
+              setOpen(false);
+            }}
+            className={cn(
+              "p-2 text-5xl font-header-font-weight-2 text-color-1",
+              pathname === url && "text-secondary-1",
+            )}
+          >
+            {title}
+          </motion.a>
         ))}
-      </div>
+      </motion.nav>
     );
-  }
+  },
 );
 
 MenuDrawer.displayName = "MenuDrawer";
@@ -38,13 +63,16 @@ const Header = () => {
 
   const menuRef = React.createRef<HTMLDivElement>();
 
+  const outsideClickHandler = (e: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+      setMenuDrawerOpen(false);
+    }
+  };
+
+  const scrollPosition = useScrollPosition();
+  const windowDimensions = useWindowDimensions();
+
   useEffect(() => {
-    const outsideClickHandler = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setMenuDrawerOpen(false);
-      }
-      console.log(e.target, menuRef.current);
-    };
     document.addEventListener("mousedown", outsideClickHandler);
 
     return () => {
@@ -54,17 +82,34 @@ const Header = () => {
   return (
     <header
       style={{ height: "var(--header-height)" }}
-      className="fixed top-0 w-full z-50">
-      <MenuDrawer open={menuDrawerOpen} ref={menuRef} />
-      <div className="wrapper py-2 h-full flex items-center gap-2 justify-between">
-        <div className="z-20">
-          <b>LOGO</b>
-        </div>
-        <div
-          className="size-10 bg-primary-1 text-color-1 rounded-full flex items-center justify-center z-20 hover:cursor-pointer"
-          onClick={() => setMenuDrawerOpen((prev) => !prev)}>
+      className={cn(
+        "fixed top-0 z-50 w-full bg-transparent transition-all duration-500 ease-in-out",
+        scrollPosition > windowDimensions.height / 2 && "bg-color-1 shadow-xl",
+      )}
+    >
+      <MenuDrawer
+        open={menuDrawerOpen}
+        ref={menuRef}
+        setOpen={setMenuDrawerOpen}
+      />
+      <div
+        className={cn(
+          "wrapper flex h-full items-center justify-between gap-2 py-2",
+        )}
+      >
+        <Link href={"/"} className={"z-20"}>
+          <b>SARVAHA</b>
+        </Link>
+        <motion.div
+          whileHover={{
+            scale: 1.2,
+          }}
+          whileTap={{ scale: 0.9 }}
+          className="z-20 flex size-10 items-center justify-center rounded-full bg-primary-1 text-color-1 hover:cursor-pointer"
+          onClick={() => setMenuDrawerOpen((prev) => !prev)}
+        >
           {menuDrawerOpen ? <IoClose /> : <IoMenu />}
-        </div>
+        </motion.div>
       </div>
     </header>
   );

@@ -4,19 +4,23 @@ export type THeaderLink = {
 };
 export const HeaderLinks: THeaderLink[] = [
   {
-    title: "NAV 1",
+    title: "Home",
     url: "/",
   },
   {
-    title: "NAV 2",
-    url: "/",
+    title: "About",
+    url: "/about",
   },
   {
-    title: "NAV 3",
-    url: "/",
+    title: "Incubation",
+    url: "/incubation",
   },
   {
-    title: "NAV 4",
-    url: "/",
+    title: "Events",
+    url: "/events",
+  },
+  {
+    title: "Contact",
+    url: "/contact",
   },
 ];
