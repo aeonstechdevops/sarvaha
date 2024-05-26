@@ -18,7 +18,7 @@ const config = {
     "If you have an innovative idea that you believe will have a beneficial impact, we are here to help you every step of the way. Our incubation program creates a supportive atmosphere for aspiring entrepreneurs to turn their ideas into successful businesses. Whether you're working on a revolutionary technology, a sustainable solution, or a disruptive business strategy, we provide the resources, mentorship, and network you need to make your concept a reality. Join us at the SARVAH Incubation Centre to create the future together!",
   button: {
     text: "Apply Now",
-    url: "/",
+    url: "/incubation/#apply",
   },
   images: [
     {
@@ -91,7 +91,7 @@ const ImageCarousel = () => {
   );
 };
 
-const Highlights = () => {
+const Support = () => {
   return (
     <motion.section className="wrapper wrapper-pad overflow-hidden">
       <div className="flex flex-col items-stretch gap-4 md:flex-row">
@@ -141,4 +141,4 @@ const Highlights = () => {
   );
 };
 
-export default Highlights;
+export default Support;

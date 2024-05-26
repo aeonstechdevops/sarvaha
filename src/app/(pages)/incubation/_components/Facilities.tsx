@@ -2,42 +2,51 @@ import { GradientOverlay } from "@/app/_components/ui/GeadientOverlay";
 import { cn } from "@/app/lib/utils";
 import Image from "next/image";
 import React, { RefObject, useRef, useState } from "react";
+import { motion } from "framer-motion";
 const config = {
   title: "Facilities",
   description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+    "Sarvah  Incubation Centre offers state-of-the-art facilities and resources to support the growth and development of startups. Some of the facilities available to our incubatees include:",
   facilities: [
     {
       src: "/images/pages/incubation/im1.png",
       alt: "Facility1 image",
       description:
-        "1 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+        "Co-working Spaces: Collaborative workspaces designed to foster creativity and innovation.",
     },
     {
       src: "/images/pages/incubation/im2.png",
       alt: "Facility2 image",
       description:
-        "2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+        "Labs: Equipped with cutting-edge technology and equipment for prototyping and product development.",
     },
     {
       src: "/images/pages/incubation/im3.png",
       alt: "Facility3 image",
       description:
-        "3 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+        "Mentorship: Access to a network of experienced mentors and industry experts who provide guidance and support.",
     },
     {
       src: "/images/pages/incubation/im4.png",
       alt: "Facility4 image",
       description:
-        "4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+        "Networking Opportunities: Regular events, workshops, and networking sessions to connect with fellow entrepreneurs, investors, and industry professionals.",
     },
     {
       src: "/images/pages/incubation/im5.png",
       alt: "Facility4 image",
       description:
-        "5 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+        "Funding Support: Assistance in securing funding through grants, investments, and partnerships.",
+    },
+    {
+      src: "/images/pages/incubation/im5.png",
+      alt: "Facility4 image",
+      description:
+        "Business Support Services: Access to legal, financial, and marketing support to help startups scale their businesses.",
     },
   ],
+  footnote:
+    "At Sarvah Incubation Centre, we are committed to providing startups with the resources and support they need to succeed. Join us and take your startup to the next level!",
 };
 
 const ImageGrid = () => {
@@ -51,7 +60,7 @@ const ImageGrid = () => {
 
   return (
     <div className="grid grid-cols-3 gap-6 sm:grid-rows-2">
-      <div
+      <motion.div
         className="relative col-span-3 min-h-[25rem] sm:row-span-2 lg:col-span-1"
         ref={displayImageRef}
       >
@@ -61,11 +70,12 @@ const ImageGrid = () => {
           fill
           className="object-cover object-center"
         />
+
         <GradientOverlay className="bg-gradient-to-t from-black to-black/0" />
         <p className="absolute bottom-5 left-5 text-color-1">
           {config.facilities[selectedImage].description}
         </p>
-      </div>
+      </motion.div>
       {config.facilities.map(({ src, alt }, idx) => (
         <div
           key={idx}
@@ -101,6 +111,7 @@ const Facilities = () => {
         <p className="text-center md:max-w-[60%]">{config.description}</p>
       </div>
       <ImageGrid />
+      <p>{config.footnote}</p>
     </section>
   );
 };
