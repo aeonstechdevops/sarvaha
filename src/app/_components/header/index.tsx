@@ -7,8 +7,6 @@ import { cn } from "@/app/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { motion } from "framer-motion";
 
@@ -20,13 +18,9 @@ type MenuDrawerProps = React.HTMLProps<HTMLDivElement> & {
 const MenuDrawer = React.forwardRef<HTMLDivElement, MenuDrawerProps>(
   ({ open, setOpen }, ref) => {
     const pathname = usePathname();
-  ({ open, setOpen }, ref) => {
-    const pathname = usePathname();
     return (
       <nav
         ref={ref}
-        animate={open ? "open" : "closed"}
-        variants={variants}
         className={cn(
           open ? "" : "translate-x-[100vw] md:translate-x-[100vw]",
           "fixed right-0 z-10 h-[100vh] w-[100vw] bg-primary-4 transition-all duration-500 ease-in-out md:w-[60vw]",
