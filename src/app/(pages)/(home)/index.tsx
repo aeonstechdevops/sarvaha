@@ -3,9 +3,9 @@
 import Hero from "./_components/Hero";
 import Events from "./_components/Events";
 import News from "./_components/News";
-import Eligibility from "./_components/Eligibility";
 import Startups from "./_components/Startups";
 import Support from "./_components/Support";
+import SelectionProcess from "./_components/SelectionProcess";
 
 export const Home = () => {
   return (
@@ -14,7 +14,7 @@ export const Home = () => {
       <Support />
       <Events />
       <News />
-      <Eligibility />
+      <SelectionProcess />
       <Startups />
     </>
   );

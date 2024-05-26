@@ -14,20 +14,15 @@ type MenuDrawerProps = React.HTMLProps<HTMLDivElement> & {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const variants = {
-  open: { x: 0 },
-  closed: { x: "100%" },
-};
+
 const MenuDrawer = React.forwardRef<HTMLDivElement, MenuDrawerProps>(
   ({ open, setOpen }, ref) => {
     const pathname = usePathname();
     return (
-      <motion.nav
+      <nav
         ref={ref}
-        animate={open ? "open" : "closed"}
-        variants={variants}
         className={cn(
-          // open ? "" : "translate-x-[100vw] md:translate-x-[100vw]",
+          open ? "" : "translate-x-[100vw] md:translate-x-[100vw]",
           "fixed right-0 z-10 h-[100vh] w-[100vw] bg-primary-4 transition-all duration-500 ease-in-out md:w-[60vw]",
           "flex flex-col items-center justify-center gap-6",
         )}
@@ -51,7 +46,7 @@ const MenuDrawer = React.forwardRef<HTMLDivElement, MenuDrawerProps>(
             {title}
           </motion.a>
         ))}
-      </motion.nav>
+      </nav>
     );
   },
 );

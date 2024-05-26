@@ -152,10 +152,8 @@ const Services = () => {
               }}
               key={idx}
               className={cn(
-                "flex items-center gap-2 text-color-1 transition-all ease-in-out hover:cursor-pointer",
-                selected === idx
-                  ? "bg-secondary-1 text-color-2"
-                  : "bg-white/10",
+                "flex items-center gap-2 border border-secondary-1 text-color-1 transition-all ease-in-out hover:cursor-pointer",
+                selected === idx && "bg-secondary-1 text-color-2",
               )}
             >
               <span className="p-2">
