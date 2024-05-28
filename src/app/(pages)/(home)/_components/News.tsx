@@ -6,29 +6,17 @@ import { BsArrowRight } from "react-icons/bs";
 import NoSSR from "@/app/_components/NoSSR";
 import { useWindowDimensions } from "@/app/hooks/useWindowDimensions";
 import { motion } from "framer-motion";
+import { news } from "../../news/news";
+import Link from "next/link";
+import Button from "@/app/_components/ui/Button";
 
 const config = {
-  title: "News",
+  title: "Latest News",
   description: "Keep yourself updated with the latest News at Sarvaha",
-
-  news: [
-    {
-      image: { url: "/images/pages/home/news1.png", alt: "News1 image" },
-      title: "Empowering Women in Tech",
-    },
-    {
-      image: { url: "/images/pages/home/news2.png", alt: "News1 image" },
-      title: "Funding Frenzy at Demo Day",
-    },
-    {
-      image: { url: "/images/pages/home/news2.png", alt: "News1 image" },
-      title: "Incubators: Powering Local Economies",
-    },
-    {
-      image: { url: "/images/pages/home/news4.png", alt: "News1 image" },
-      title: "Clean Energy Gets a Boost",
-    },
-  ],
+  button: {
+    text: "Explore",
+    url: "/news",
+  },
 };
 
 const NewsCarousel = () => {
@@ -51,36 +39,45 @@ const NewsCarousel = () => {
       showIndicators={false}
       centerSlidePercentage={centerSlidePercentage}
     >
-      {[...config.news, ...config.news].map(({ image, title }, idx) => (
-        <div
-          key={idx}
-          className="group flex aspect-[4/3] h-[20rem] max-w-[90vw] flex-col gap-4 overflow-hidden rounded-sm"
-        >
-          <div className="relative aspect-[3/4] h-full">
-            <Image
-              src={image.url}
-              alt={image.alt}
-              fill
-              className="object-cover object-center"
-            />
-          </div>
-          <p className="inline-flex items-center gap-4 text-left text-lg text-color-1 transition-all duration-500 ease-in-out group-hover:text-3xl">
-            {title} <BsArrowRight />
-          </p>
-        </div>
-      ))}
+      {news
+        .sort((a, b) => (a.day > b.day ? 1 : -1))
+        .slice(0, 5)
+        .map(({ images, title, newsSlug }, idx) => (
+          <Link
+            href={`/news/${newsSlug}`}
+            key={idx}
+            className="group flex aspect-[4/3] h-[20rem] max-w-[90vw] flex-col gap-4 overflow-hidden rounded-sm"
+          >
+            <div className="relative aspect-[3/4] h-full">
+              <Image
+                src={images[0].src}
+                alt={images[0].alt}
+                fill
+                className="object-cover object-center"
+              />
+            </div>
+            <p className="inline-flex items-center gap-4 text-left text-lg text-color-1 transition-all duration-500 ease-in-out group-hover:text-3xl">
+              {title} <BsArrowRight className="min-w-6" />
+            </p>
+          </Link>
+        ))}
     </ReactResponsiveCarousel>
   );
 };
 
 const News = () => {
   return (
-    <section className="overflow-hidden bg-primary-4">
+    <section id="news" className="overflow-hidden bg-primary-4">
       <div className="wrapper wrapper-pad flex flex-col gap-6">
-        <div className="flex flex-col justify-between md:flex-row md:items-center">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <div className="text-color-1">
             <h1>{config.title}</h1>
             <p>{config.description}</p>
+          </div>
+          <div>
+            <Link href={config.button.url} className="w-fit">
+              <Button>{config.button.text}</Button>
+            </Link>
           </div>
         </div>
         <motion.div

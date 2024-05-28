@@ -104,74 +104,47 @@ export const events = [
     ],
   },
   {
-    eventSlug: "the-first-event",
-    title: "The first event",
+    eventSlug: "rmageddon-2023",
+    title: "Rmageddon 2023 Kicks Off with Enthusiasm and Nostalgia",
     description:
-      "Keep yourself updated with the latest events happening at Sarvaha. Keep yourself updated with the latest events happening at Sarvaha. Keep yourself updated with the latest events happening at Sarvaha",
+      "Rmageddon 2023 was officially inaugurated by Dr. M.V. Bhalerao, the esteemed faculty coordinator, in the presence of the entire faculty. The event commenced with the announcement of the first game, Retromania (Roborace), which was modeled after classic Mario themes. The meticulously designed arena and strategically placed obstacles evoked a sense of nostalgia, delighting participants and spectators alike.",
     day: "Friday, 20 Jan 2024",
     time: "10:00 AM",
-    location: "Wokhardt Hospital, Near Lad College, Dharampeth",
+    location: "Admin Block, SGGSIE&T, Nanded",
     details: [
       {
         title: "About the event",
         paragraphs: [
-          "Lorem ipsum dolor sit amet consectetur. Nec felis nunc diam est ac. Morbi amet leo neque nisl turpis in. Gravida faucibus volutpat est consequat faucibus at tincidunt netus. Diam aliquam lorem eget cursus. Dolor sem ornare ultrices egestas pharetra. Orci vel et velit sapien adipiscing id. Ut enim pellentesque non faucibus. Consequat amet eget ac risus eu. Etiam consectetur suspendisse nulla est nisl vel. Aenean gravida mauris dapibus vel tristique egestas mattis tellus. Ullamcorper quis ut pharetra cursus sit nibh nisl ultrices volutpat. Proin dis sit at tincidunt in adipiscing dictum phasellus. Imperdiet in quam nisl mattis. A aenean ac cras tristique dictum mi maecenas tempor blandit. Maecenas arcu vel nisi tempor sit. Malesuada nec fermentum venenatis semper pellentesque posuere donec. Vitae volutpat varius ultrices sem elementum. Tristique eu habitant venenatis natoque morbi. Lorem ipsum dolor sit amet consectetur. Nec felis nunc diam est ac. Morbi amet leo neque nisl turpis in. Gravida faucibus volutpat est consequat faucibus at tincidunt netus. Diam aliquam lorem eget cursus. Dolor sem ornare ultrices egestas pharetra. Orci vel et velit sapien adipiscing id. Ut enim pellentesque non faucibus. Consequat amet eget ac risus eu. Etiam consectetur suspendisse nulla est nisl vel. Aenean gravida mauris dapibus vel tristique egestas mattis tellus. Ullamcorper quis ut pharetra cursus sit nibh nisl ultrices volutpat. Proin dis sit at tincidunt in adipiscing dictum phasellus. Imperdiet in quam nisl mattis. A aenean ac cras tristique dictum mi maecenas tempor blandit. Maecenas arcu vel nisi tempor sit. Malesuada nec fermentum venenatis semper pellentesque posuere donec. Vitae volutpat varius ultrices sem elementum. Tristique eu habitant venenatis natoque morbi.",
-          "Lorem ipsum dolor sit amet consectetur. Nec felis nunc diam est ac. Morbi amet leo neque nisl turpis in. Gravida faucibus volutpat est consequat faucibus at tincidunt netus. Diam aliquam lorem eget cursus. Dolor sem ornare ultrices egestas pharetra. Orci vel et velit sapien adipiscing id. Ut enim pellentesque non faucibus. Consequat amet eget ac risus eu. Etiam consectetur suspendisse nulla est nisl vel. Aenean gravida mauris dapibus vel tristique egestas mattis tellus. Ullamcorper quis ut pharetra cursus sit nibh nisl ultrices volutpat. Proin dis sit at tincidunt in adipiscing dictum phasellus. Imperdiet in quam nisl mattis. A aenean ac cras tristique dictum mi maecenas tempor blandit. Maecenas arcu vel nisi tempor sit. Malesuada nec fermentum venenatis semper pellentesque posuere donec. Vitae volutpat varius ultrices sem elementum. Tristique eu habitant venenatis natoque morbi. Lorem ipsum dolor sit amet consectetur. Nec felis nunc diam est ac. Morbi amet leo neque nisl turpis in. Gravida faucibus volutpat est consequat faucibus at tincidunt netus. Diam aliquam lorem eget cursus. Dolor sem ornare ultrices egestas pharetra. Orci vel et velit sapien adipiscing id. Ut enim pellentesque non faucibus. Consequat amet eget ac risus eu. Etiam consectetur suspendisse nulla est nisl vel. Aenean gravida mauris dapibus vel tristique egestas mattis tellus. Ullamcorper quis ut pharetra cursus sit nibh nisl ultrices volutpat. Proin dis sit at tincidunt in adipiscing dictum phasellus. Imperdiet in quam nisl mattis. A aenean ac cras tristique dictum mi maecenas tempor blandit. Maecenas arcu vel nisi tempor sit. Malesuada nec fermentum venenatis semper pellentesque posuere donec. Vitae volutpat varius ultrices sem elementum. Tristique eu habitant venenatis natoque morbi.",
+          "The event was expertly hosted by RNXG, with commentators Nikhilesh Deshmukh, Prasad Chede, and Atharva Jagdale providing engaging and dynamic commentary throughout the proceedings. Their efforts significantly contributed to the event's lively and spirited atmosphere. Eight teams showcased their skills and advanced to the semifinals.",
+          "The following day featured two highly anticipated games: Pac Runner (Line Follower) with a Pacman theme, and #Ninja Clash (Robo Sumo) inspired by the Ninja Turtles. The competition intensified as teams progressed through the quarter-finals, semi-finals, and finals, with the crowd enthusiastically cheering and supporting their favorites.",
+          "The event concluded on a high note with a Prize Distribution Ceremony, marking the successful end of Rmageddon 2023. The atmosphere was filled with camaraderie and excitement, leaving participants and attendees with cherished memories of the competition.",
         ],
       },
     ],
     images: [
       {
-        src: "/images/pages/events/e1.png",
-        alt: "Event1 image",
+        src: "/images/pages/events/rmageddon/e1.jpg",
+        alt: "Rmageddon 2023 image",
       },
       {
-        src: "/images/pages/events/e2.png",
-        alt: "Event1 image",
+        src: "/images/pages/events/rmageddon/e2.jpg",
+        alt: "Rmageddon 2023 image",
       },
       {
-        src: "/images/pages/events/e3.png",
-        alt: "Event1 image",
+        src: "/images/pages/events/rmageddon/e3.jpg",
+        alt: "Rmageddon 2023 image",
       },
       {
-        src: "/images/pages/home/event4.png",
-        alt: "Event1 image",
-      },
-    ],
-  },
-  {
-    eventSlug: "the-second-event",
-    title: "The second event",
-    description:
-      "Keep yourself updated with the latest events happening at Sarvaha",
-    day: "Friday, 20 Jan 2024",
-    time: "10:00 AM",
-    location: "Wokhardt Hospital, Near Lad College, Dharampeth",
-    details: [
-      {
-        title: "About the event",
-        paragraphs: [
-          "Lorem ipsum dolor sit amet consectetur. Nec felis nunc diam est ac. Morbi amet leo neque nisl turpis in. Gravida faucibus volutpat est consequat faucibus at tincidunt netus. Diam aliquam lorem eget cursus. Dolor sem ornare ultrices egestas pharetra. Orci vel et velit sapien adipiscing id. Ut enim pellentesque non faucibus. Consequat amet eget ac risus eu. Etiam consectetur suspendisse nulla est nisl vel. Aenean gravida mauris dapibus vel tristique egestas mattis tellus. Ullamcorper quis ut pharetra cursus sit nibh nisl ultrices volutpat. Proin dis sit at tincidunt in adipiscing dictum phasellus. Imperdiet in quam nisl mattis. A aenean ac cras tristique dictum mi maecenas tempor blandit. Maecenas arcu vel nisi tempor sit. Malesuada nec fermentum venenatis semper pellentesque posuere donec. Vitae volutpat varius ultrices sem elementum. Tristique eu habitant venenatis natoque morbi. Lorem ipsum dolor sit amet consectetur. Nec felis nunc diam est ac. Morbi amet leo neque nisl turpis in. Gravida faucibus volutpat est consequat faucibus at tincidunt netus. Diam aliquam lorem eget cursus. Dolor sem ornare ultrices egestas pharetra. Orci vel et velit sapien adipiscing id. Ut enim pellentesque non faucibus. Consequat amet eget ac risus eu. Etiam consectetur suspendisse nulla est nisl vel. Aenean gravida mauris dapibus vel tristique egestas mattis tellus. Ullamcorper quis ut pharetra cursus sit nibh nisl ultrices volutpat. Proin dis sit at tincidunt in adipiscing dictum phasellus. Imperdiet in quam nisl mattis. A aenean ac cras tristique dictum mi maecenas tempor blandit. Maecenas arcu vel nisi tempor sit. Malesuada nec fermentum venenatis semper pellentesque posuere donec. Vitae volutpat varius ultrices sem elementum. Tristique eu habitant venenatis natoque morbi.",
-          "Lorem ipsum dolor sit amet consectetur. Nec felis nunc diam est ac. Morbi amet leo neque nisl turpis in. Gravida faucibus volutpat est consequat faucibus at tincidunt netus. Diam aliquam lorem eget cursus. Dolor sem ornare ultrices egestas pharetra. Orci vel et velit sapien adipiscing id. Ut enim pellentesque non faucibus. Consequat amet eget ac risus eu. Etiam consectetur suspendisse nulla est nisl vel. Aenean gravida mauris dapibus vel tristique egestas mattis tellus. Ullamcorper quis ut pharetra cursus sit nibh nisl ultrices volutpat. Proin dis sit at tincidunt in adipiscing dictum phasellus. Imperdiet in quam nisl mattis. A aenean ac cras tristique dictum mi maecenas tempor blandit. Maecenas arcu vel nisi tempor sit. Malesuada nec fermentum venenatis semper pellentesque posuere donec. Vitae volutpat varius ultrices sem elementum. Tristique eu habitant venenatis natoque morbi. Lorem ipsum dolor sit amet consectetur. Nec felis nunc diam est ac. Morbi amet leo neque nisl turpis in. Gravida faucibus volutpat est consequat faucibus at tincidunt netus. Diam aliquam lorem eget cursus. Dolor sem ornare ultrices egestas pharetra. Orci vel et velit sapien adipiscing id. Ut enim pellentesque non faucibus. Consequat amet eget ac risus eu. Etiam consectetur suspendisse nulla est nisl vel. Aenean gravida mauris dapibus vel tristique egestas mattis tellus. Ullamcorper quis ut pharetra cursus sit nibh nisl ultrices volutpat. Proin dis sit at tincidunt in adipiscing dictum phasellus. Imperdiet in quam nisl mattis. A aenean ac cras tristique dictum mi maecenas tempor blandit. Maecenas arcu vel nisi tempor sit. Malesuada nec fermentum venenatis semper pellentesque posuere donec. Vitae volutpat varius ultrices sem elementum. Tristique eu habitant venenatis natoque morbi.",
-        ],
-      },
-    ],
-    images: [
-      {
-        src: "/images/pages/events/e5.png",
-        alt: "Event1 image",
+        src: "/images/pages/events/rmageddon/e4.jpg",
+        alt: "Rmageddon 2023 image",
       },
       {
-        src: "/images/pages/events/e6.png",
-        alt: "Event1 image",
+        src: "/images/pages/events/rmageddon/e5.jpg",
+        alt: "Rmageddon 2023 image",
       },
       {
-        src: "/images/pages/events/e3.png",
-        alt: "Event1 image",
-      },
-      {
-        src: "/images/pages/home/event4.png",
-        alt: "Event1 image",
+        src: "/images/pages/events/rmageddon/e6.jpg",
+        alt: "Rmageddon 2023 image",
       },
     ],
   },
