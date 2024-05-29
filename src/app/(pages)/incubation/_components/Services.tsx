@@ -2,6 +2,8 @@ import { cn } from "@/app/lib/utils";
 import Image from "next/image";
 import React, { RefObject, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { FaRegLightbulb } from "react-icons/fa";
+import { FaLightbulb } from "react-icons/fa6";
 
 const config = {
   title: "Services",
@@ -9,72 +11,72 @@ const config = {
     {
       title: "Mentorship Program",
       description:
-        "We provide mentorship to students who are looking to start their entrepreneurial journey. Our mentorship program is designed to help students develop the skills and knowledge they need to succeed in the world of startups.",
+        "Our experienced mentors provide personalized guidance and support, sharing their expertise and insights to help entrepreneurs navigate the challenges of building a successful business.",
       image: {
-        url: "/images/pages/incubation/service.png",
+        url: "/images/pages/incubation/services/ser1.jpg",
         alt: "Mentorship image",
       },
     },
     {
       title: "Investor Connect",
       description:
-        "We provide investors with a platform to connect with potential investors and partners. Our platform offers a range of services, including access to investment opportunities, networking events, and mentorship programs.",
+        "We facilitate connections with potential investors, including angel investors, venture capitalists, and strategic partners, to help secure the funding needed to scale your venture.",
       image: {
-        url: "/images/pages/incubation/service.png",
+        url: "/images/pages/incubation/services/ser2.jpg",
         alt: "Mentorship image",
       },
     },
     {
       title: "Lab and Testing Infrastructure",
       description:
-        "We provide a range of lab and testing infrastructure to help startups develop and test their products. Our infrastructure includes access to high-quality equipment, software, and resources to ensure that startups can develop and test their products effectively.",
+        "Our state-of-the-art facilities and co-working spaces provide entrepreneurs with access to the resources and infrastructure they need to grow their businesses efficiently.",
       image: {
-        url: "/images/pages/incubation/service.png",
+        url: "/images/pages/incubation/services/ser3.jpg",
         alt: "Mentorship image",
       },
     },
     {
       title: "Entrepreneurship Training",
       description:
-        "We provide entrepreneurship training to students who are looking to start their own businesses. Our training program is designed to help students develop the skills and knowledge they need to succeed in the world of entrepreneurship.",
+        "Our comprehensive training programs equip entrepreneurs with the knowledge, skills, and mindset necessary to succeed in today's competitive business landscape.",
       image: {
-        url: "/images/pages/incubation/service.png",
+        url: "/images/pages/incubation/services/ser4.jpg",
         alt: "Mentorship image",
       },
     },
     {
-      title: "Internship and Recruitment Connect",
+      title: "Access To Network",
       description:
-        "We provide internship and recruitment connect to startups looking to hire top talent. Our platform offers a range of services, including access to internship opportunities, job postings, and recruitment events.",
+        "Join our vibrant community of entrepreneurs, industry experts, and business leaders, fostering valuable connections and collaborations that can propel your venture forward.",
       image: {
-        url: "/images/pages/incubation/service.png",
+        url: "/images/pages/incubation/services/ser5.jpg",
         alt: "Mentorship image",
       },
     },
     {
       title: "Legal and IP",
       description:
-        "We provide legal and IP services to startups looking to protect their intellectual property and comply with legal requirements. Our services include legal advice, patent filing, and trademark registration.",
+        "Our team of legal professionals provides guidance on intellectual property protection, contract negotiations, and compliance matters, ensuring your business operates within legal boundaries.",
       image: {
-        url: "/images/pages/incubation/service.png",
+        url: "/images/pages/incubation/services/ser6.jpg",
         alt: "Mentorship image",
       },
     },
     {
-      title: "Marketing Support",
+      title: "Funding Support",
       description:
-        "We provide marketing support to startups looking to promote their products and reach a wider audience. Our services include social media management, content creation, and advertising campaigns.",
+        "We assist entrepreneurs in securing funding through various channels, including seed funding, grants, and investor pitches, providing the financial resources needed to bring their ideas to life.",
       image: {
-        url: "/images/pages/incubation/service.png",
+        url: "/images/pages/incubation/services/ser7.jpg",
         alt: "Mentorship image",
       },
     },
     {
       title: "Business and Finance Advisory",
       description:
-        "We provide business and finance advisory to startups looking to grow their businesses and make informed financial decisions. Our advisory services include financial planning, budgeting, and investment advice.",
+        "Our experienced advisors offer strategic guidance on financial planning, market analysis, and business model development, helping entrepreneurs make informed decisions for sustainable growth.",
       image: {
-        url: "/images/pages/incubation/service.png",
+        url: "/images/pages/incubation/services/ser8.jpg",
         alt: "Mentorship image",
       },
     },
@@ -136,7 +138,7 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-primary-4">
+    <section id="services" className="bg-primary-4">
       <div className="wrapper wrapper-pad flex flex-col gap-4 text-color-1">
         <h2>{config.title}</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -157,9 +159,7 @@ const Services = () => {
               )}
             >
               <span className="p-2">
-                <div className="relative size-6 ">
-                  <Image src={service.image.url} alt={service.image.alt} fill />
-                </div>
+                {selected === idx ? <FaLightbulb /> : <FaRegLightbulb />}
               </span>
               <p className="p-2">{service.title}</p>
             </motion.div>

@@ -3,7 +3,7 @@ import About from "./";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Sarvaha | SARVAHA",
+  title: "About Sarvah | SARVAH",
   description: "About Incubation Center of SGGS",
 };
 

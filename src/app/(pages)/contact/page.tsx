@@ -1,16 +1,14 @@
-import React from 'react';
-import Contact from '.';
+import React from "react";
+import Contact from ".";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Sarvaha | SARVAHA",
+  title: "Contact Sarvah | SARVAH",
   description: "Contact Incubation Center of SGGS",
 };
 
 const ContactPage = () => {
-  return (
-    <Contact/>
-  )
-}
+  return <Contact />;
+};
 
-export default ContactPage
+export default ContactPage;

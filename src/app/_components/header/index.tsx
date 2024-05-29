@@ -79,7 +79,8 @@ const Header = () => {
       style={{ height: "var(--header-height)" }}
       className={cn(
         "fixed top-0 z-50 w-full bg-transparent transition-all duration-500 ease-in-out",
-        scrollPosition > windowDimensions.height / 2 && "bg-color-1 shadow-xl",
+        scrollPosition > windowDimensions.height / 2 &&
+          "bg-gradient-to-b from-white/60 to-transparent backdrop-blur-md",
       )}
     >
       <MenuDrawer
@@ -93,16 +94,17 @@ const Header = () => {
         )}
       >
         <Link href={"/"} className={"z-20"}>
-          <b>SARVAHA</b>
+          <b>SARVAH</b>
         </Link>
         <motion.div
           whileHover={{
             scale: 1.2,
           }}
           whileTap={{ scale: 0.9 }}
-          className="z-20 flex size-10 items-center justify-center rounded-full bg-primary-1 text-color-1 hover:cursor-pointer"
+          className="z-20 flex items-center justify-center gap-2 rounded-full bg-primary-1 px-4 py-2 text-color-1 hover:cursor-pointer"
           onClick={() => setMenuDrawerOpen((prev) => !prev)}
         >
+          {/* <span>Menu</span> */}
           {menuDrawerOpen ? <IoClose /> : <IoMenu />}
         </motion.div>
       </div>

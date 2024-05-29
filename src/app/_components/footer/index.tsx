@@ -11,6 +11,7 @@ import {
   IoLogoYoutube,
 } from "react-icons/io";
 import Button from "../ui/Button";
+import Link from "next/link";
 
 const config = {
   social: {
@@ -62,20 +63,16 @@ const config = {
           url: "/about",
         },
         {
-          title: "Career",
-          url: "/",
-        },
-        {
           title: "Management",
-          url: "/",
+          url: "/about#management",
         },
         {
           title: "Events",
-          url: "/",
+          url: "/events",
         },
         {
           title: "News",
-          url: "/",
+          url: "/#news",
         },
       ],
     },
@@ -83,49 +80,24 @@ const config = {
       title: "DISCOVER",
       links: [
         {
-          title: "Built At Sarvaha",
-          url: "/",
+          title: "Built At Sarvah",
+          url: "/#startups",
         },
         {
           title: "Community Engagement",
-          url: "/",
+          url: "/events",
         },
         {
           title: "Contact",
-          url: "/",
+          url: "/contact",
         },
         {
           title: "Diversity & Inclusion",
-          url: "/",
+          url: "/incubation",
         },
         {
           title: "Giving",
-          url: "/",
-        },
-      ],
-    },
-    {
-      title: "RESOURCES",
-      links: [
-        {
-          title: "Accessibility",
-          url: "/",
-        },
-        {
-          title: "Jobs",
-          url: "/",
-        },
-        {
-          title: "Privacy Policy",
-          url: "/",
-        },
-        {
-          title: "Events",
-          url: "/",
-        },
-        {
-          title: "News",
-          url: "/",
+          url: "/incubation#services",
         },
       ],
     },
@@ -210,13 +182,24 @@ const SocialsGroup = ({
 };
 const Footer = () => {
   return (
-    <footer className="wrapper-pad bg-primary-4 text-color-1">
-      <div className="wrapper wrapper-pad grid grid-cols-1 gap-8 sm:grid-cols-3 lg:!grid-cols-4">
+    <footer className="bg-primary-4 text-color-1">
+      <div className="wrapper wrapper-pad grid grid-cols-1 gap-8 sm:grid-cols-2 lg:!grid-cols-3">
         {config.columns.map((group, idx) => (
           <LinkGroup group={group} key={idx} />
         ))}
         <SocialsGroup className={"sm:col-span-3 lg:!col-span-1"} />
-        <div className="col-span-1 mx-auto mt-6 h-1 w-[80vw] gap-6 bg-white/10 sm:col-span-3 sm:w-[60vw] lg:!col-span-4" />
+      </div>
+      <div className="bg-secondary-4">
+        <div className="wrapper p-2 text-center">
+          All rights reserved Sarvah &copy; 2024 | Designed and developed by{" "}
+          <Link
+            href="https://www.aeonstechnologies.com/"
+            target="_blank"
+            className="text-primary-4 underline"
+          >
+            Aeons Technologies
+          </Link>
+        </div>
       </div>
     </footer>
   );

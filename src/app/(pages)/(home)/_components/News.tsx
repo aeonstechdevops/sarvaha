@@ -12,7 +12,7 @@ import Button from "@/app/_components/ui/Button";
 
 const config = {
   title: "Latest News",
-  description: "Keep yourself updated with the latest News at Sarvaha",
+  description: "Keep yourself updated with the latest News at Sarvah",
   button: {
     text: "Explore",
     url: "/news",

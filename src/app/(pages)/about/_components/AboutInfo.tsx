@@ -6,7 +6,7 @@ import Link from "next/link";
 const config = {
   sections: [
     {
-      title: { part1: "About", part2: "Sarvaha" },
+      title: { part1: "About", part2: "Sarvah" },
       description: `SARVAH - “SGGSIET Alumni Run Venture Accelerator Hub” is inspired by the word
             “सर्व:” meaning all, everything, inclusive. The Incubator will assist students, as well
             as other startup aspirants in ALL ways; EVERYTHING from mentoring, to providing

@@ -10,7 +10,7 @@ const config = {
   facilities: [
     {
       src: "/images/pages/incubation/im1.png",
-      alt: "Facility1 image",
+      alt: "Co-working Spaces",
       description:
         "Co-working Spaces: Collaborative workspaces designed to foster creativity and innovation.",
     },

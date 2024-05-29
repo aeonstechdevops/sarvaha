@@ -3,6 +3,7 @@ import { cn } from "@/app/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
+import { TbHandClick } from "react-icons/tb";
 
 type Card = {
   id: number;
@@ -28,7 +29,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   return (
     <div className="relative mx-auto grid h-full w-full max-w-7xl  grid-cols-1 gap-4 p-10 md:grid-cols-3">
       {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "")}>
+        <div key={i} className={cn(card.className, "hover:cursor-pointer")}>
           <motion.div
             onClick={() => handleClick(card)}
             className={cn(
@@ -44,6 +45,12 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
           >
             {selected?.id === card.id && <SelectedCard selected={selected} />}
             <BlurImage card={card} />
+            <TbHandClick
+              className={cn(
+                "absolute bottom-2 right-2 z-10 size-12 animate-bounce rounded-full bg-white p-2 text-2xl text-primary-1 shadow-lg",
+                selected !== null && "hidden",
+              )}
+            />
           </motion.div>
         </div>
       ))}
@@ -51,9 +58,9 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
         onClick={handleOutsideClick}
         className={cn(
           "absolute left-0 top-0 z-10 h-full w-full bg-black opacity-0",
-          selected?.id ? "pointer-events-auto" : "pointer-events-none",
+          selected ? "pointer-events-auto" : "pointer-events-none",
         )}
-        animate={{ opacity: selected?.id ? 0.1 : 0 }}
+        animate={{ opacity: selected ? 0.1 : 0 }}
       />
     </div>
   );

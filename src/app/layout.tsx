@@ -17,7 +17,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SARVAHA",
+  title: "SARVAH",
   description: "Incubation Center of SGGS",
 };
 
