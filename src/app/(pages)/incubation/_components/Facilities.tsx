@@ -1,8 +1,7 @@
-import { GradientOverlay } from "@/app/_components/ui/GeadientOverlay";
 import { cn } from "@/app/lib/utils";
 import Image from "next/image";
-import React, { RefObject, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
+import Link from "next/link";
 const config = {
   title: "Facilities",
   description:
@@ -13,36 +12,42 @@ const config = {
       alt: "Co-working Spaces",
       description:
         "Co-working Spaces: Collaborative workspaces designed to foster creativity and innovation.",
+      url: "https://www.sggs.ac.in/home/page/aicte-idea-lab-sggsiet-nanded",
     },
     {
       src: "/images/pages/incubation/im2.png",
       alt: "Facility2 image",
       description:
         "Labs: Equipped with cutting-edge technology and equipment for prototyping and product development.",
+      url: "https://www.sggs.ac.in/home/page/center-of-excellence-in-signal-and-image-processing",
     },
     {
       src: "/images/pages/incubation/im3.png",
       alt: "Facility3 image",
       description:
         "Mentorship: Access to a network of experienced mentors and industry experts who provide guidance and support.",
+      url: "https://www.sggs.ac.in/home/page/ict-facilities",
     },
     {
       src: "/images/pages/incubation/im4.png",
       alt: "Facility4 image",
       description:
         "Networking Opportunities: Regular events, workshops, and networking sessions to connect with fellow entrepreneurs, investors, and industry professionals.",
+      url: "https://www.sggs.ac.in/home/page/Technical-Education-Quality-Improvement-Programme",
     },
     {
       src: "/images/pages/incubation/im5.png",
       alt: "Facility4 image",
       description:
         "Funding Support: Assistance in securing funding through grants, investments, and partnerships.",
+      url: "https://www.sggs.ac.in/home/page/Media-Language-Laboratory",
     },
     {
       src: "/images/pages/incubation/im5.png",
       alt: "Facility4 image",
       description:
         "Business Support Services: Access to legal, financial, and marketing support to help startups scale their businesses.",
+      url: "https://www.sggs.ac.in/home/page/Central-Library",
     },
   ],
   footnote:
@@ -50,17 +55,17 @@ const config = {
 };
 
 const ImageGrid = () => {
-  const [selectedImage, setSelectedImage] = useState(0);
+  // const [selectedImage, setSelectedImage] = useState(0);
 
-  const displayImageRef: RefObject<HTMLDivElement> = useRef(null);
+  // const displayImageRef: RefObject<HTMLDivElement> = useRef(null);
 
-  const scrollToDisplayImage = () => {
-    displayImageRef.current?.scrollIntoView({ block: "center" });
-  };
+  // const scrollToDisplayImage = () => {
+  //   displayImageRef.current?.scrollIntoView({ block: "center" });
+  // };
 
   return (
-    <div className="grid grid-cols-3 gap-6 sm:grid-rows-2">
-      <motion.div
+    <div className="grid-cols grid gap-4 md:grid-cols-3">
+      {/* <motion.div
         className="relative col-span-3 min-h-[25rem] sm:row-span-2 lg:col-span-1"
         ref={displayImageRef}
       >
@@ -75,15 +80,13 @@ const ImageGrid = () => {
         <p className="absolute bottom-5 left-5 text-color-1">
           {config.facilities[selectedImage].description}
         </p>
-      </motion.div>
-      {config.facilities.map(({ src, alt }, idx) => (
-        <div
+      </motion.div> */}
+      {config.facilities.map(({ src, alt, url, description }, idx) => (
+        <Link
           key={idx}
-          className="group relative col-span-3 min-h-[10rem] cursor-pointer overflow-hidden md:col-span-1"
-          onClick={() => {
-            setSelectedImage(idx);
-            scrollToDisplayImage();
-          }}
+          className="group relative min-h-[15rem] cursor-pointer overflow-hidden"
+          href={url}
+          target="_blank"
         >
           <Image
             src={src}
@@ -96,9 +99,9 @@ const ImageGrid = () => {
               "absolute bottom-2 left-2 bg-primary-2 p-1 text-color-1 transition-all duration-200 ease-in-out group-hover:bg-secondary-1",
             )}
           >
-            Click to learn more
+            {description}
           </p>
-        </div>
+        </Link>
       ))}
     </div>
   );

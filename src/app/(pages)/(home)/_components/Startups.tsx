@@ -5,7 +5,7 @@ import Link from "next/link";
 import Button from "@/app/_components/ui/Button";
 
 const config = {
-  title: "Our Start-ups",
+  title: "SGGS alumni Start-ups",
   description:
     "At Sarvah, we're proud to foster a vibrant community of innovative startups across diverse industries. These passionate entrepreneurs are tackling real-world challenges and developing groundbreaking solutions. Explore the companies making waves and shaping the future:",
 };

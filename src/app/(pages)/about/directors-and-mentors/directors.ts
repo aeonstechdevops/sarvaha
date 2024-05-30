@@ -20,16 +20,20 @@ export const directors = [
     },
   },
   {
-    slug: "vishwas-rathor",
+    slug: "vikas-rathod",
     image: {
       url: "/images/pages/about/members/vr.png",
-      alt: "Image of Vikas Rathor.",
+      alt: "Image of Vikas Rathod.",
     },
-    name: "Vikas Rathor",
+    name: "Vikas Rathod",
     post: "Board of Director",
     description: [
-      `I did my graduation (BE Electronics)from SGGS College of Engineering & Technology, Nanded in 1989.After my job with Electronics Testing & Development Center (ETDC), Pune,I started my own activity from 1996. I did not have any background of business. I started my own company (ZEAL MANUFACTURING).Initially equipment of all brands of Electronics Test and Measurement were repaired and maintained by me.I must have repaired thousands of Oscilloscopes, Multimeters etc. I designed products one after anither and introduced them into market. I faced problems both financial and technical while launching every new product.I overcame them by hardwork. I implemented quality management systems like ISO 9001 for manufacturing activity and ISO 17025 for management of our in house calibration laboratory. So far I have designed more than 100 products.Few of them are Multifunction Calibrator,  Three phase power energy meter Calibrator,  Precision AC & DC High current Sources,  Precision AC & DC High Voltage Sources, Precision Decade Resistance & Inductance & Capacitance Boxes, AC DC High Voltage Measurement Probes, DC Regulated Power Supplies,  AC Power supplies,  High Voltage Breakdown testers, Electronic loads etc. Indias' majority of the Calibration and testing laboratories,  research institutes, engineering / technological institutes, electrical/electronics/automation industries are our customers. In my company effectively I am responsible for Design Development, Production, Testing, Calibration and Marketing too. While implementing both QMS, I learnt about other management skills, most important among them is HR management. There are about 50 employees are working at ZEAL. `,
-      `I have got patent granted for Multifunction Calibrator.  More than 500 Calibration labs of India and about 150 outside India are our customers.  We have till date exported products to more than 55 countries.`,
+      `Worked with Electronics Test & Development Center, Pune (A Government of India Calibration and Testing Laboratory) from 1990 to 1996`,
+      `Director and founder of company from 1996, ZEAL Manufacturing & Calibration Services Pvt. Ltd. , Pune. ZEAL manufactures and exports wide range of test equipment and calibration standards.`,
+      `India’s majority of the leading electro-technical calibration and testing laboratories, meter manufacturing companies, R&D centers, educational institutes are customers of ZEAL products. ZEAL has exported till date to more than 55 countries.`,
+      `ZEAL is an ISO 9001: 2015 company and in-house calibration lab has been accredited as per ISO/IEC 17025: 2017 by NABL India
+      `,
+      `Got patent granted for Multifunction Calibrator by Intellectual Property of India, Govt of India`,
     ],
     linkedin: {
       url: "https://www.linkedin.com/in/vikas-rathod-ab191522",
@@ -38,7 +42,7 @@ export const directors = [
   {
     slug: "manesh-kokare",
     image: {
-      url: "/images/pages/about/members/mk.png",
+      url: "/images/pages/about/members/mk.jpg",
       alt: "Image of Manesh Kokare.",
     },
     name: "Manesh Kokare",
@@ -55,7 +59,7 @@ export const directors = [
   {
     slug: "yashwant-joshi",
     image: {
-      url: "/images/pages/about/members/yj.png",
+      url: "/images/pages/about/members/yj.jpg",
       alt: "Image of Prof. Yashwant Y. Joshi.",
     },
     name: "Prof. Yashwant Y. Joshi",

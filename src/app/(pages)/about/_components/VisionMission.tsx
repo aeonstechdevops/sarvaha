@@ -15,7 +15,7 @@ const config = {
     icon: "/images/pages/about/bulb.svg",
   },
   image: {
-    src: "/images/pages/about/vision-mission.png",
+    src: "/images/pages/about/vision-mission.jpg",
     alt: "Vision mission section image.",
   },
 };

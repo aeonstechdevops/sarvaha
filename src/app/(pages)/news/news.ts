@@ -490,4 +490,25 @@ export const news = [
       },
     ],
   },
+  {
+    newsSlug: "product-patent",
+    title: "Product Patent",
+    description: `calibrate ac voltmeter,  ac ammeter , DC voltmeter,  DC ammeter , Multimeter, clamp meter
+    `,
+    day: "2024",
+    details: [
+      {
+        title: "",
+        paragraphs: [
+          `Product has been primarily developed to calibrate ac voltmeter,  ac ammeter , DC voltmeter,  DC ammeter , Multimeter, clamp meter, etc.`,
+        ],
+      },
+    ],
+    images: [
+      {
+        src: "/images/pages/news/n10.jpg",
+        alt: "Global Scientists Ranking image",
+      },
+    ],
+  },
 ];
