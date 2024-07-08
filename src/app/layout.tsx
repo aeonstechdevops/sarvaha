@@ -3,6 +3,7 @@ import { Libre_Bodoni, Poppins } from "next/font/google";
 import "./globals.scss";
 import Header from "./_components/header";
 import Footer from "./_components/footer";
+import { Toaster } from "sonner";
 
 const libre_bodoni = Libre_Bodoni({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Toaster richColors />
       </body>
     </html>
   );

@@ -10,3 +10,13 @@ export function cn(...inputs: ClassValue[]) {
 export const trimChars = (str: string, length: number) => {
   return str.length > length ? str.slice(0, length) + "..." : str;
 };
+
+export const isValidEmail = (email: string) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
+export const isValidPhoneNumber = (phoneNumber: string) => {
+  const regex = /^(\+91)?\s?\d{10}$/;
+  return regex.test(phoneNumber);
+};

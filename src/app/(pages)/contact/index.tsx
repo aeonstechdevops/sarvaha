@@ -1,16 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import Button from "@/app/_components/ui/Button";
 import { FaPhoneAlt } from "react-icons/fa";
-import {
-  IoIosMail,
-  IoLogoFacebook,
-  IoLogoInstagram,
-  IoLogoLinkedin,
-  IoLogoYoutube,
-} from "react-icons/io";
+import { IoIosMail, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io";
 import { FaLocationDot, FaXTwitter } from "react-icons/fa6";
-import { cn } from "@/app/lib/utils";
+import { cn, isValidEmail, isValidPhoneNumber } from "@/app/lib/utils";
+import { toast } from "sonner";
 
 const config = {
   title: "Contact Us",
@@ -41,8 +38,8 @@ const config = {
     ],
   },
   button: {
-    text: "Send Message",
-    url: "/",
+    text: (isSubmitting: boolean) =>
+      isSubmitting ? "Sending..." : "Send Message",
   },
 };
 
@@ -94,9 +91,63 @@ const InfoCard = () => {
 };
 
 const FormCard = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { firstName, lastName, email, phoneNumber, message } = formData;
+    // validate form data
+    if (!firstName || !lastName || !email || !phoneNumber || !message) {
+      toast.warning("Please fill in all fields");
+      return;
+    }
+    // validate email and phone number
+    if (!isValidEmail(email)) {
+      toast.warning("Please enter a valid email");
+      return;
+    }
+    if (!isValidPhoneNumber(phoneNumber)) {
+      toast.warning("Please enter a valid phone number");
+      return;
+    }
+    const body = `First Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nMessage: ${message}`;
+    setIsSubmitting(true);
+    fetch("/api/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ body }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          message: "",
+        });
+        toast.success(data.message);
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error("Error sending email");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  };
   return (
     <div className="flex flex-1 flex-col p-6">
-      <form className="flex flex-col gap-4">
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="flex flex-col">
             <label htmlFor="firstName" className="">
@@ -105,6 +156,10 @@ const FormCard = () => {
             <input
               type="text"
               id="firstName"
+              value={formData.firstName}
+              onChange={(e) =>
+                setFormData({ ...formData, firstName: e.target.value })
+              }
               className="border-b border-gray-300 p-2 focus:outline-none"
             />
           </div>
@@ -115,6 +170,10 @@ const FormCard = () => {
             <input
               type="text"
               id="lastName"
+              value={formData.lastName}
+              onChange={(e) =>
+                setFormData({ ...formData, lastName: e.target.value })
+              }
               className="border-b border-gray-300 p-2 focus:outline-none"
             />
           </div>
@@ -125,6 +184,10 @@ const FormCard = () => {
             <input
               type="email"
               id="email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               className="border-b border-gray-300 p-2 focus:outline-none"
             />
           </div>
@@ -135,6 +198,10 @@ const FormCard = () => {
             <input
               type="tel"
               id="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={(e) =>
+                setFormData({ ...formData, phoneNumber: e.target.value })
+              }
               className="border-b border-gray-300 p-2 focus:outline-none"
             />
           </div>
@@ -146,13 +213,15 @@ const FormCard = () => {
           <textarea
             placeholder="Write your message.."
             id="message"
+            value={formData.message}
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
             className="h-10 border-b border-gray-300 py-2 focus:outline-none"
-          ></textarea>
+          />
         </div>
         <div className="flex justify-center sm:justify-end">
-          <Link href={config.button.url} className="flex w-fit">
-            <Button>{config.button.text}</Button>
-          </Link>
+          <Button type="submit">{config.button.text(isSubmitting)}</Button>
         </div>
       </form>
     </div>
