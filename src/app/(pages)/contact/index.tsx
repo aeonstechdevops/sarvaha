@@ -18,34 +18,25 @@ const config = {
   card: {
     title: "Contact Information",
     description: "Say something to start a live chat!",
-    phone: "+1012 3456 789",
-    email: "demo@gmail.com",
-    address: "132 Dartmouth Street Boston, Massachusetts 02156 United States",
+    phone: "+91 94236 93802",
+    emails: ["sarvah@sggs.ac.in", "dean.iil@sggs.ac.in"],
+    address: `
+    Shri Guru Gobind Singhji Institute of Engineering and Technology, (SGGS I E&T), Vishnupuri,Nanded, (Maharashtra State) Pin : 431 606 [India]`,
     socials: [
       {
-        title: "Facebook",
-        url: "https://www.facebook.com",
-        icon: <IoLogoFacebook />,
-      },
-      {
         title: "Twitter",
-        url: "https://www.x.com",
+        url: "https://x.com/Sarvah_IF",
         icon: <FaXTwitter />,
       },
       {
         title: "YouTube",
-        url: "https://www.youtube.com",
+        url: "https://www.youtube.com/channel/UCwWzzNHi_ltKzoYNsVpqTvA",
         icon: <IoLogoYoutube />,
       },
       {
         title: "LinkedIn",
-        url: "https://www.linkedin.com",
+        url: "https://www.linkedin.com/company/sarvah-incubation%C2%A0foundation/",
         icon: <IoLogoLinkedin />,
-      },
-      {
-        title: "Instagram",
-        url: "https://www.instagram.com",
-        icon: <IoLogoInstagram />,
       },
     ],
   },
@@ -58,7 +49,7 @@ const config = {
 const InfoCard = () => {
   const { card } = config;
   return (
-    <div className="flex flex-col justify-between gap-4 rounded-lg bg-primary-3 p-8 text-color-1">
+    <div className="flex flex-1 flex-col justify-between gap-4 rounded-lg bg-primary-3 p-8 text-color-1">
       <div className="flex flex-col gap-2">
         <h2 className="leading-10">{card.title}</h2>
         <p>{card.description}</p>
@@ -68,9 +59,13 @@ const InfoCard = () => {
           <FaPhoneAlt size={20} />
           <Link href={`tel:${card.phone}`}>{card.phone}</Link>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <IoIosMail size={20} />
-          <Link href={`mailto:${card.email}`}>{card.email}</Link>
+          {card.emails.map((email, idx) => (
+            <Link href={`mailto:${email}`} key={idx}>
+              {email}
+            </Link>
+          ))}
         </div>
         <div className="flex items-center gap-2">
           <FaLocationDot size={30} />
@@ -100,7 +95,7 @@ const InfoCard = () => {
 
 const FormCard = () => {
   return (
-    <div className="flex flex-col p-6">
+    <div className="flex flex-1 flex-col p-6">
       <form className="flex flex-col gap-4">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="flex flex-col">
@@ -142,39 +137,6 @@ const FormCard = () => {
               id="phoneNumber"
               className="border-b border-gray-300 p-2 focus:outline-none"
             />
-          </div>
-        </div>
-        <div className="flex flex-col pb-6">
-          <p className="mb-2">Select Subject:</p>
-          <div className="flex flex-wrap gap-5">
-            <label
-              htmlFor="subject1"
-              className="flex cursor-pointer items-center gap-1 md:gap-2 lg:gap-1"
-            >
-              <input type="radio" id="subject1" name="SelectSubject" />
-              General Enquiry
-            </label>
-            <label
-              htmlFor="subject2"
-              className="flex cursor-pointer items-center gap-1 md:gap-2 lg:gap-1"
-            >
-              <input type="radio" id="subject2" name="SelectSubject" />
-              General Enquiry
-            </label>
-            <label
-              htmlFor="subject3"
-              className="flex cursor-pointer items-center gap-1 md:gap-2 lg:gap-1"
-            >
-              <input type="radio" id="subject3" name="SelectSubject" />
-              General Enquiry
-            </label>
-            <label
-              htmlFor="subject4"
-              className="flex cursor-pointer items-center gap-1 md:gap-2 lg:gap-1"
-            >
-              <input type="radio" id="subject4" name="SelectSubject" />
-              General Enquiry
-            </label>
           </div>
         </div>
         <div className="flex flex-col pb-4">
