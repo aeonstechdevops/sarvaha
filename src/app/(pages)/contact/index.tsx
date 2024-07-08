@@ -4,8 +4,8 @@ import Button from "@/app/_components/ui/Button";
 import { FaPhoneAlt } from "react-icons/fa";
 import {
   IoIosMail,
-  IoLogoFacebook,
-  IoLogoInstagram,
+  // IoLogoFacebook,
+  // IoLogoInstagram,
   IoLogoLinkedin,
   IoLogoYoutube,
 } from "react-icons/io";
