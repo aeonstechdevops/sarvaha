@@ -12,7 +12,7 @@ import {
 import { FaLocationDot, FaXTwitter } from "react-icons/fa6";
 import { cn } from "@/app/lib/utils";
 
-//, "dean.iil@sggs.ac.in"
+//
 
 const config = {
   title: "Contact Us",
@@ -21,7 +21,7 @@ const config = {
     title: "Contact Information",
     description: "Say something to start a live chat!",
     phone: "+91 94236 93802",
-    emails: ["sarvah@sggs.ac.in"],
+    emails: ["sarvah@sggs.ac.in", "dean.iil@sggs.ac.in"],
     address: `
     Shri Guru Gobind Singhji Institute of Engineering and Technology, (SGGS I E&T), Vishnupuri,Nanded, (Maharashtra State) Pin : 431 606 [India]`,
     socials: [
