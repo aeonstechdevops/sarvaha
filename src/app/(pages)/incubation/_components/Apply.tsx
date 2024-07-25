@@ -42,8 +42,8 @@ const config = {
       {
         title: "Email to us at",
         url: {
-          label: "sarvah@sggs.edu.in",
-          url: "mailto:sarvah@sggs.edu.in",
+          label: "sarvah@sggs.ac.in",
+          url: "mailto:sarvah@sggs.ac.in",
         },
       },
     ],
