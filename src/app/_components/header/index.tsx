@@ -23,7 +23,7 @@ const MenuDrawer = React.forwardRef<HTMLDivElement, MenuDrawerProps>(
         ref={ref}
         className={cn(
           open ? "" : "translate-x-[100vw] md:translate-x-[100vw]",
-          "fixed right-0 z-10 h-[100vh] w-[100vw] bg-primary-4 transition-all duration-500 ease-in-out md:w-[60vw]",
+          "fixed right-0 z-10 h-[100vh] w-[100vw] bg-primary-4 transition-all duration-500 ease-in-out md:w-[60vw] lg:w-[40vw]",
           "flex flex-col items-center justify-center gap-6",
         )}
       >

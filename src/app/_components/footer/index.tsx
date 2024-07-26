@@ -27,16 +27,16 @@ const config = {
       },
     },
     socials: [
-      {
-        title: "Facebook",
-        url: "https://www.facebook.com",
-        icon: <IoLogoFacebook />,
-      },
-      {
-        title: "Twitter",
-        url: "https://www.x.com",
-        icon: <FaXTwitter />,
-      },
+      // {
+      //   title: "Facebook",
+      //   url: "https://www.facebook.com",
+      //   icon: <IoLogoFacebook />,
+      // },
+      // {
+      //   title: "Twitter",
+      //   url: "https://www.x.com",
+      //   icon: <FaXTwitter />,
+      // },
       {
         title: "YouTube",
         url: "https://www.youtube.com",
@@ -44,14 +44,14 @@ const config = {
       },
       {
         title: "LinkedIn",
-        url: "https://www.linkedin.com",
+        url: "https://www.linkedin.com/company/sarvah-incubation%C2%A0foundation?trk=blended-typeahead",
         icon: <IoLogoLinkedin />,
       },
-      {
-        title: "Instagram",
-        url: "https://www.instagram.com",
-        icon: <IoLogoInstagram />,
-      },
+      // {
+      //   title: "Instagram",
+      //   url: "https://www.instagram.com",
+      //   icon: <IoLogoInstagram />,
+      // },
     ],
   },
   columns: [

@@ -20,11 +20,11 @@ const config = {
     address: `
     Shri Guru Gobind Singhji Institute of Engineering and Technology, (SGGS I E&T), Vishnupuri,Nanded, (Maharashtra State) Pin : 431 606 [India]`,
     socials: [
-      {
-        title: "Twitter",
-        url: "https://x.com/Sarvah_IF",
-        icon: <FaXTwitter />,
-      },
+      // {
+      //   title: "Twitter",
+      //   url: "https://x.com/Sarvah_IF",
+      //   icon: <FaXTwitter />,
+      // },
       {
         title: "YouTube",
         url: "https://www.youtube.com/channel/UCwWzzNHi_ltKzoYNsVpqTvA",
@@ -32,7 +32,7 @@ const config = {
       },
       {
         title: "LinkedIn",
-        url: "https://www.linkedin.com/company/sarvah-incubation%C2%A0foundation/",
+        url: "https://www.linkedin.com/company/sarvah-incubation%C2%A0foundation?trk=blended-typeahead",
         icon: <IoLogoLinkedin />,
       },
     ],
