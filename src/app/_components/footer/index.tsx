@@ -3,10 +3,8 @@
 import { cn } from "@/app/lib/utils";
 import { motion } from "framer-motion";
 import React from "react";
-import { FaXTwitter } from "react-icons/fa6";
+// import { FaXTwitter } from "react-icons/fa6";
 import {
-  IoLogoFacebook,
-  IoLogoInstagram,
   IoLogoLinkedin,
   IoLogoYoutube,
 } from "react-icons/io";
