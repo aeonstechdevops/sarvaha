@@ -6,6 +6,7 @@ import Startups from "./_components/Startups";
 import Support from "./_components/Support";
 import SelectionProcess from "./_components/SelectionProcess";
 import Glimpses from "./_components/Glimpses";
+import HowToApply from "./_components/aluminifor";
 
 export const Home = () => {
   return (
@@ -16,6 +17,7 @@ export const Home = () => {
       <News />
       <SelectionProcess />
       <Startups />
+      <HowToApply />
     </>
   );
 };

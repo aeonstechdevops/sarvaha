@@ -104,7 +104,7 @@ const FormCard = () => {
     e.preventDefault();
     const { firstName, lastName, email, phoneNumber, message } = formData;
     // validate form data
-    if (!firstName || !lastName || !email || !phoneNumber || !message) {
+    if (!firstName || !lastName || !email || !message) {
       toast.warning("Please fill in all fields");
       return;
     }
@@ -113,10 +113,10 @@ const FormCard = () => {
       toast.warning("Please enter a valid email");
       return;
     }
-    if (!isValidPhoneNumber(phoneNumber)) {
-      toast.warning("Please enter a valid phone number");
-      return;
-    }
+    // if (!isValidPhoneNumber(phoneNumber)) {
+    //   toast.warning("Please enter a valid phone number");
+    //   return;
+    // }
     const body = `First Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nMessage: ${message}`;
     setIsSubmitting(true);
     fetch("/api/emails", {
