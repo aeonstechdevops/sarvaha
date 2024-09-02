@@ -6,7 +6,7 @@ import Button from "@/app/_components/ui/Button";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoIosMail, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
-import { cn, isValidEmail, isValidPhoneNumber } from "@/app/lib/utils";
+import { cn, isValidEmail } from "@/app/lib/utils";
 import { toast } from "sonner";
 
 const config = {
